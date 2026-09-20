@@ -19,8 +19,14 @@ from src.recommender import get_recommender
 app = Flask(__name__)
 app.config['JSON_SORT_KEYS'] = False
 
-# Initialize RAG Engine
-rag_engine = get_rag()
+# Lazy RAG Engine Initialization (preserves fast production startup)
+rag_engine = None
+
+def get_rag_engine():
+    global rag_engine
+    if rag_engine is None:
+        rag_engine = get_rag()
+    return rag_engine
 
 # ---------------------------------------------------------
 # PAGE ROUTES (Frontend Views)
@@ -206,7 +212,7 @@ def api_chat():
         handle = data.get('handle') or data.get('product_handle')
 
         # Process through grounded RAG Engine
-        response = rag_engine.answer_query(user_message, product_handle=handle)
+        response = get_rag_engine().answer_query(user_message, product_handle=handle)
 
         return jsonify({
             'success': True,
@@ -223,8 +229,9 @@ def api_chat():
         }), 500
 
 if __name__ == '__main__':
+    port = int(os.environ.get("PORT", 5000))
     print("=" * 60)
     print("RoSin Bangles & Jewellery E-Commerce & AI Assistant Server")
-    print("Running on: http://127.0.0.1:5000")
+    print(f"Running on: http://0.0.0.0:{port}")
     print("=" * 60)
-    app.run(host='127.0.0.1', port=5000, debug=False)
+    app.run(host="0.0.0.0", port=port, debug=False)
