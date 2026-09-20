@@ -19,6 +19,7 @@ instance/
 
 # Local databases
 *.db
+!/products.db
 *.sqlite
 *.sqlite3
 
@@ -37,3 +38,6 @@ htmlcov/
 *.db.bak
 
 *.json.bak
+
+# Ignore accidental nested project copy
+rosin-ai-jewellery-assistant/
