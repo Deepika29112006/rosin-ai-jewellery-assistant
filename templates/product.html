@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Product Details — RoSin Bangles & Jewellery</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Jost:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,600;0,700;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/static/css/main.css">
+  <link rel="stylesheet" href="/static/css/chatbot.css">
+  <style>
+    .product-detail-layout {
+      max-width: 1140px;
+      margin: 40px auto 70px;
+      padding: 0 20px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 50px;
+    }
+
+    /* Gallery */
+    .gallery-container {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+    .main-img-wrapper {
+      width: 100%;
+      height: 480px;
+      background: #fdfdfd;
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-md);
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .main-img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    .thumbnails-row {
+      display: flex;
+      gap: 10px;
+      overflow-x: auto;
+      padding-bottom: 4px;
+    }
+    .thumbnail-item {
+      width: 75px;
+      height: 75px;
+      object-fit: cover;
+      border-radius: var(--radius-sm);
+      border: 2px solid transparent;
+      cursor: pointer;
+      opacity: 0.7;
+      transition: all 0.2s;
+    }
+    .thumbnail-item:hover, .thumbnail-item.active {
+      border-color: var(--primary-color);
+      opacity: 1;
+    }
+
+    /* Details Column */
+    .details-column {
+      display: flex;
+      flex-direction: column;
+    }
+    .breadcrumb-nav {
+      font-size: 13px;
+      color: var(--text-muted);
+      margin-bottom: 8px;
+    }
+    .product-title-lg {
+      font-family: var(--font-heading);
+      font-size: 28px;
+      font-weight: 700;
+      color: var(--text-main);
+      margin-bottom: 12px;
+      line-height: 1.3;
+    }
+    .product-price-lg {
+      font-size: 26px;
+      font-weight: 700;
+      color: var(--primary-color);
+      margin-bottom: 18px;
+    }
+    .lead-time-box {
+      background: var(--gold-light);
+      border: 1px solid rgba(197, 155, 39, 0.3);
+      border-radius: var(--radius-sm);
+      padding: 12px 16px;
+      font-size: 13px;
+      margin-bottom: 24px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    /* Variant Selectors */
+    .variant-group {
+      margin-bottom: 20px;
+    }
+    .variant-label {
+      font-size: 13px;
+      font-weight: 700;
+      text-transform: uppercase;
+      margin-bottom: 8px;
+      display: block;
+    }
+    .variant-pills-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+    .variant-pill {
+      background: #ffffff;
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-sm);
+      padding: 8px 16px;
+      font-size: 13px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.15s;
+    }
+    .variant-pill:hover, .variant-pill.active {
+      border-color: var(--primary-color);
+      background: var(--primary-color);
+      color: #ffffff;
+    }
+
+    /* Quantity & CTA buttons */
+    .action-row {
+      display: flex;
+      gap: 16px;
+      margin-top: 20px;
+      flex-wrap: wrap;
+    }
+    .qty-stepper-box {
+      display: flex;
+      align-items: center;
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-sm);
+      background: #ffffff;
+    }
+    .qty-step-btn {
+      background: transparent;
+      border: none;
+      width: 38px;
+      height: 44px;
+      font-size: 18px;
+      cursor: pointer;
+      color: var(--text-main);
+    }
+    .qty-input-box {
+      width: 44px;
+      border: none;
+      text-align: center;
+      font-weight: bold;
+      font-size: 15px;
+      outline: none;
+    }
+
+    .btn-add-cart-lg {
+      flex-grow: 1;
+      background: var(--primary-color);
+      color: #ffffff;
+      font-size: 15px;
+      font-weight: 700;
+      padding: 12px 24px;
+      border: none;
+      border-radius: var(--radius-sm);
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+    .btn-add-cart-lg:hover {
+      background: var(--primary-hover);
+    }
+
+    .btn-whatsapp-inquire {
+      width: 100%;
+      margin-top: 12px;
+      background: var(--whatsapp-green);
+      color: #ffffff;
+      font-size: 14px;
+      font-weight: 700;
+      padding: 12px 20px;
+      border: none;
+      border-radius: var(--radius-sm);
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      transition: background 0.2s;
+    }
+    .btn-whatsapp-inquire:hover {
+      background: var(--whatsapp-hover);
+    }
+
+    /* Info Accordions */
+    .product-info-tabs {
+      margin-top: 30px;
+      border-top: 1px solid var(--border-color);
+      padding-top: 20px;
+    }
+    .info-tab-item {
+      margin-bottom: 16px;
+    }
+    .info-tab-title {
+      font-weight: 700;
+      font-size: 14px;
+      margin-bottom: 6px;
+      color: var(--primary-color);
+    }
+    .info-tab-content {
+      font-size: 13.5px;
+      color: #555;
+      line-height: 1.6;
+    }
+
+    @media (max-width: 800px) {
+      .product-detail-layout {
+        grid-template-columns: 1fr;
+      }
+      .main-img-wrapper {
+        height: 380px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ANNOUNCEMENT BAR -->
+  <div class="announcement-bar">
+    <span>✨ Verified Real Store Data | Bangles & Jewellery Handcrafted by Women Artisans</span>
+    <a href="https://wa.me/918438990370" target="_blank" rel="noopener">WhatsApp: +91 8438990370</a>
+  </div>
+
+  <!-- MAIN HEADER -->
+  <header class="main-header">
+    <div class="header-container">
+      <a href="/" class="brand-logo">
+        <span class="brand-title">RoSin</span>
+        <span class="brand-subtitle">Bangles & Jewellery</span>
+      </a>
+
+      <nav>
+        <ul class="nav-links">
+          <li><a href="/">Home</a></li>
+          <li><a href="/shop">All Collections</a></li>
+          <li><a href="/shop?category=Bangles">Bangles</a></li>
+          <li><a href="/shop?category=Jewellery">Jewellery</a></li>
+          <li><a href="/about">About & Policies</a></li>
+        </ul>
+      </nav>
+
+      <div class="header-actions">
+        <button class="btn-ai-nav" title="Ask AI Assistant">
+          <span>✨</span> Ask Assistant
+        </button>
+        <a href="/wishlist" class="wishlist-icon-btn" title="View Wishlist">
+          <span class="wishlist-heart-icon">♡</span> Wishlist
+          <span class="wishlist-badge">0</span>
+        </a>
+        <a href="/cart" class="cart-icon-btn">
+          <span>🛒 Cart</span>
+          <span class="cart-badge">0</span>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- METADATA ANCHOR -->
+  <span id="product-handle-meta" data-handle="{{ handle }}" style="display:none;"></span>
+
+  <!-- PRODUCT DETAIL CONTAINER -->
+  <div class="product-detail-layout" id="product-detail-container">
+    <!-- LEFT: GALLERY -->
+    <div class="gallery-container">
+      <div class="main-img-wrapper">
+        <img src="" alt="Product Image" class="main-img" id="main-product-img">
+      </div>
+      <div class="thumbnails-row" id="thumbnails-container">
+        <!-- Injected via JavaScript -->
+      </div>
+    </div>
+
+    <!-- RIGHT: DETAILS & ACTIONS -->
+    <div class="details-column">
+      <div class="breadcrumb-nav" id="product-category-breadcrumb">Loading...</div>
+      <div style="display: flex; justify-content: space-between; align-items: flex-start; gap: 12px;">
+        <h1 class="product-title-lg" id="product-title" style="margin-bottom: 0;">Loading Product...</h1>
+        <button class="btn-wishlist-detail" id="btn-detail-wishlist" title="Add to Wishlist" aria-label="Add to Wishlist">
+          <span class="detail-heart-icon">♡</span>
+        </button>
+      </div>
+      <div style="margin: 8px 0 12px;">
+        <span class="badge-subcat" id="product-subcategory-badge" style="position:static;">Subcategory</span>
+      </div>
+      <div class="product-price-lg" id="product-price-display">₹0</div>
+
+      <div class="lead-time-box">
+        <span>⏱️</span>
+        <div>
+          <strong>Handmade to Order:</strong> Crafting takes <strong>7 to 10 business days</strong> before dispatch.
+        </div>
+      </div>
+
+      <!-- SIZES -->
+      <div class="variant-group" id="size-group-wrapper">
+        <label class="variant-label">Select Size:</label>
+        <div class="variant-pills-row" id="size-options-container">
+          <!-- Injected via JS -->
+        </div>
+      </div>
+
+      <!-- ACTION BUTTONS -->
+      <div class="action-row">
+        <div class="qty-stepper-box">
+          <button class="qty-step-btn" id="qty-minus">-</button>
+          <input type="text" class="qty-input-box" id="qty-input" value="1" readonly>
+          <button class="qty-step-btn" id="qty-plus">+</button>
+        </div>
+        <button class="btn-add-cart-lg" id="btn-add-cart">Add to Cart</button>
+      </div>
+
+      <!-- WHATSAPP INQUIRY -->
+      <button class="btn-whatsapp-inquire" id="btn-order-whatsapp">
+        <span>💬 Order / Inquire via WhatsApp</span>
+      </button>
+
+      <!-- VERIFIED INFORMATION TABS -->
+      <div class="product-info-tabs">
+        <div class="info-tab-item">
+          <div class="info-tab-title">Product Description & Craft Details</div>
+          <div class="info-tab-content" id="product-description-text">Loading...</div>
+        </div>
+
+        <div class="info-tab-item">
+          <div class="info-tab-title">Sizing & Measurement Guide</div>
+          <div class="info-tab-content">
+            • <strong>Size 2.4:</strong> 6.0 cm inner diameter<br>
+            • <strong>Size 2.6:</strong> 6.3 cm – 6.5 cm inner diameter<br>
+            • <strong>Size 2.8:</strong> 6.7 cm inner diameter<br>
+            <em>Please measure carefully before purchasing as size exchanges are not provided.</em>
+          </div>
+        </div>
+
+        <div class="info-tab-item">
+          <div class="info-tab-title">Shipping & Return Policy</div>
+          <div class="info-tab-content">
+            • Domestic shipping takes 3–10 business days after dispatch.<br>
+            • International shipping takes 1–2 weeks (ordered via WhatsApp).<br>
+            • <strong>No exchange, no refund:</strong> All items are custom made on order.<br>
+            • For transit damages, an uncut 360-degree unboxing video must be submitted within 2 days to WhatsApp.
+          </div>
+        </div>
+
+        <div class="info-tab-item">
+          <div class="info-tab-title">Verification Provenance</div>
+          <div class="info-tab-content">
+            Live catalog listing: <a id="product-official-source" href="#" target="_blank" rel="noopener" style="color:var(--primary-color); text-decoration:underline;">View on Official rosinjewellery.com</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SIMILAR PRODUCTS (YOU MAY ALSO LIKE) -->
+  <section class="similar-products-section" id="similar-products-section" style="display:none; max-width: 1140px; margin: 0 auto 70px; padding: 0 20px;">
+    <div style="border-top: 1px solid var(--border-color); padding-top: 40px;">
+      <div style="display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 24px;">
+        <div>
+          <h2 style="font-family: var(--font-heading); font-size: 26px; font-weight: 700; color: var(--text-main); margin-bottom: 6px;">✨ You May Also Like</h2>
+          <p style="font-size: 14px; color: var(--text-muted); margin: 0;">Verified artisan recommendations similar to this handcrafted piece</p>
+        </div>
+      </div>
+      <div class="products-grid" id="similar-products-grid" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 24px;">
+        <!-- Injected via JavaScript -->
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="main-footer">
+    <div class="footer-bottom">
+      &copy; 2026 RoSin Bangles & Jewellery. Verified Hackathon Prototype.
+    </div>
+  </footer>
+
+  <!-- SCRIPTS -->
+  <script src="/static/js/main.js"></script>
+  <script src="/static/js/product.js"></script>
+  <script src="/static/js/chatbot.js"></script>
+</body>
+</html>

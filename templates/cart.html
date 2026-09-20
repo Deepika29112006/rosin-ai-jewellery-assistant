@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Shopping Cart — RoSin Bangles & Jewellery</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Jost:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,600;0,700;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/static/css/main.css">
+  <link rel="stylesheet" href="/static/css/chatbot.css">
+  <style>
+    .cart-wrapper {
+      max-width: 1140px;
+      margin: 40px auto 80px;
+      padding: 0 20px;
+    }
+    .cart-page-title {
+      font-family: var(--font-heading);
+      font-size: 32px;
+      color: var(--primary-color);
+      margin-bottom: 24px;
+    }
+
+    .cart-grid {
+      display: grid;
+      grid-template-columns: 1fr 340px;
+      gap: 36px;
+    }
+
+    /* Cart Table */
+    .cart-table-card {
+      background: #ffffff;
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-md);
+      overflow-x: auto;
+      padding: 20px;
+      box-shadow: var(--shadow-sm);
+    }
+    .cart-table {
+      width: 100%;
+      border-collapse: collapse;
+      text-align: left;
+    }
+    .cart-table th {
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      color: var(--text-muted);
+      border-bottom: 1px solid var(--border-color);
+      padding: 12px 10px;
+    }
+    .cart-table td {
+      padding: 16px 10px;
+      border-bottom: 1px solid #f2eee8;
+      vertical-align: middle;
+    }
+
+    .cart-product-cell {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+    .cart-thumb {
+      width: 65px;
+      height: 65px;
+      object-fit: cover;
+      border-radius: var(--radius-sm);
+      background: #eee;
+    }
+    .cart-item-title {
+      font-weight: 600;
+      font-size: 14px;
+      color: var(--text-main);
+      display: block;
+      margin-bottom: 4px;
+    }
+    .cart-item-size {
+      font-size: 12px;
+      color: var(--gold-accent);
+      font-weight: 600;
+      display: block;
+    }
+
+    .cart-price-cell, .cart-total-cell {
+      font-weight: 600;
+      font-size: 14px;
+    }
+
+    /* Stepper inside cart table */
+    .qty-stepper {
+      display: inline-flex;
+      align-items: center;
+      border: 1px solid var(--border-color);
+      border-radius: 4px;
+    }
+    .qty-btn {
+      background: #faf8f5;
+      border: none;
+      width: 28px;
+      height: 28px;
+      font-size: 15px;
+      cursor: pointer;
+    }
+    .qty-val {
+      padding: 0 10px;
+      font-weight: bold;
+      font-size: 13px;
+    }
+
+    .btn-remove-item {
+      background: transparent;
+      border: none;
+      color: #999999;
+      font-size: 20px;
+      cursor: pointer;
+    }
+    .btn-remove-item:hover {
+      color: var(--primary-color);
+    }
+
+    /* Summary Card */
+    .cart-summary-card {
+      background: #ffffff;
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-md);
+      padding: 24px;
+      height: fit-content;
+      box-shadow: var(--shadow-sm);
+    }
+    .summary-title {
+      font-size: 18px;
+      font-family: var(--font-heading);
+      font-weight: 700;
+      margin-bottom: 16px;
+      border-bottom: 1px solid var(--border-color);
+      padding-bottom: 12px;
+    }
+    .summary-row {
+      display: flex;
+      justify-content: space-between;
+      font-size: 14px;
+      margin-bottom: 12px;
+    }
+    .summary-total {
+      border-top: 1px solid var(--border-color);
+      padding-top: 14px;
+      font-size: 18px;
+      font-weight: 700;
+      color: var(--primary-color);
+      margin-top: 14px;
+    }
+
+    .btn-order-whatsapp-main {
+      width: 100%;
+      background: var(--whatsapp-green);
+      color: #ffffff;
+      font-weight: 700;
+      font-size: 15px;
+      padding: 14px;
+      border: none;
+      border-radius: var(--radius-sm);
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      margin-top: 20px;
+      box-shadow: 0 4px 12px rgba(37, 211, 102, 0.3);
+      transition: background 0.2s;
+    }
+    .btn-order-whatsapp-main:hover {
+      background: var(--whatsapp-hover);
+    }
+
+    /* Empty Cart View */
+    .empty-cart-box {
+      text-align: center;
+      padding: 80px 20px;
+      background: #ffffff;
+      border-radius: var(--radius-md);
+      border: 1px dashed var(--border-color);
+    }
+
+    @media (max-width: 850px) {
+      .cart-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ANNOUNCEMENT BAR -->
+  <div class="announcement-bar">
+    <span>✨ Verified Real Store Data | Bangles & Jewellery Handcrafted by Women Artisans</span>
+    <a href="https://wa.me/918438990370" target="_blank" rel="noopener">WhatsApp: +91 8438990370</a>
+  </div>
+
+  <!-- MAIN HEADER -->
+  <header class="main-header">
+    <div class="header-container">
+      <a href="/" class="brand-logo">
+        <span class="brand-title">RoSin</span>
+        <span class="brand-subtitle">Bangles & Jewellery</span>
+      </a>
+
+      <nav>
+        <ul class="nav-links">
+          <li><a href="/">Home</a></li>
+          <li><a href="/shop">All Collections</a></li>
+          <li><a href="/shop?category=Bangles">Bangles</a></li>
+          <li><a href="/shop?category=Jewellery">Jewellery</a></li>
+          <li><a href="/about">About & Policies</a></li>
+        </ul>
+      </nav>
+
+      <div class="header-actions">
+        <button class="btn-ai-nav" title="Ask AI Assistant">
+          <span>✨</span> Ask Assistant
+        </button>
+        <a href="/wishlist" class="wishlist-icon-btn" title="View Wishlist">
+          <span class="wishlist-heart-icon">♡</span> Wishlist
+          <span class="wishlist-badge">0</span>
+        </a>
+        <a href="/cart" class="cart-icon-btn">
+          <span>🛒 Cart</span>
+          <span class="cart-badge">0</span>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- CART CONTAINER -->
+  <main class="cart-wrapper">
+    <h1 class="cart-page-title">Your Shopping Bag</h1>
+
+    <!-- EMPTY VIEW -->
+    <div class="empty-cart-box" id="cart-empty-view" style="display:none;">
+      <div style="font-size: 48px; margin-bottom: 12px;">🛍️</div>
+      <h2 style="font-size: 20px; margin-bottom: 8px;">Your cart is currently empty</h2>
+      <p style="color: var(--text-muted); font-size: 14px; margin-bottom: 24px;">Explore our handcrafted bridal bangles, glass sets, and festive jewellery.</p>
+      <a href="/shop" class="btn-primary">Browse Collections</a>
+    </div>
+
+    <!-- FILLED VIEW -->
+    <div class="cart-grid" id="cart-filled-view">
+      <!-- ITEMS TABLE -->
+      <div class="cart-table-card">
+        <table class="cart-table">
+          <thead>
+            <tr>
+              <th>Product Details</th>
+              <th>Unit Price</th>
+              <th>Quantity</th>
+              <th>Total</th>
+              <th></th>
+            </tr>
+          </thead>
+          <tbody id="cart-items-body">
+            <!-- Injected via cart.js -->
+          </tbody>
+        </table>
+      </div>
+
+      <!-- SUMMARY CARD -->
+      <div class="cart-summary-card">
+        <div class="summary-title">Order Summary</div>
+        
+        <div class="summary-row">
+          <span>Item Subtotal</span>
+          <span id="cart-subtotal">₹0</span>
+        </div>
+
+        <div class="summary-row" style="color: var(--text-muted); font-size: 13px;">
+          <span>Shipping</span>
+          <span>Calculated at Dispatch</span>
+        </div>
+
+        <div class="summary-row summary-total">
+          <span>Estimated Total</span>
+          <span id="cart-grand-total">₹0</span>
+        </div>
+
+        <p style="font-size: 12px; color: #777; margin-top: 12px; line-height: 1.5;">
+          • All handmade items are crafted to order (7–10 days).<br>
+          • Direct WhatsApp checkout facilitates instant size confirmation & payment.
+        </p>
+
+        <button class="btn-order-whatsapp-main" id="btn-cart-whatsapp">
+          <span>💬 Order via WhatsApp</span>
+        </button>
+      </div>
+    </div>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="main-footer">
+    <div class="footer-bottom">
+      &copy; 2026 RoSin Bangles & Jewellery. Verified Hackathon Prototype.
+    </div>
+  </footer>
+
+  <!-- SCRIPTS -->
+  <script src="/static/js/main.js"></script>
+  <script src="/static/js/cart.js"></script>
+  <script src="/static/js/chatbot.js"></script>
+</body>
+</html>

@@ -1,0 +1,553 @@
+[
+  {
+    "id": "RAG001",
+    "category": "product_category",
+    "query": "Show me necklaces",
+    "expected_behavior": "catalog_search",
+    "expected_match": true,
+    "expected_constraints": {
+      "category": "Jewellery",
+      "subcategory": "Necklaces"
+    }
+  },
+  {
+    "id": "RAG002",
+    "category": "product_category",
+    "query": "Show me earrings",
+    "expected_behavior": "catalog_search",
+    "expected_match": true,
+    "expected_constraints": {
+      "category": "Jewellery",
+      "subcategory": "Earrings"
+    }
+  },
+  {
+    "id": "RAG003",
+    "category": "product_category",
+    "query": "Show me jhumkas",
+    "expected_behavior": "catalog_search",
+    "expected_match": true,
+    "expected_constraints": {
+      "category": "Jewellery",
+      "subcategory": "Jhumkas"
+    }
+  },
+  {
+    "id": "RAG004",
+    "category": "product_category",
+    "query": "Show me bridal jewellery",
+    "expected_behavior": "catalog_search",
+    "expected_match": true,
+    "expected_constraints": {
+      "category": "Jewellery",
+      "subcategory": "Bridal Jewellery"
+    }
+  },
+  {
+    "id": "RAG005",
+    "category": "product_category",
+    "query": "Show me bridal full sets",
+    "expected_behavior": "catalog_search",
+    "expected_match": true,
+    "expected_constraints": {
+      "category": "Jewellery",
+      "subcategory": "Bridal Full Sets"
+    }
+  },
+  {
+    "id": "RAG006",
+    "category": "product_category",
+    "query": "Show me bridal combo sets",
+    "expected_behavior": "catalog_search",
+    "expected_match": true,
+    "expected_constraints": {
+      "category": "Jewellery",
+      "subcategory": "Bridal Combo Sets"
+    }
+  },
+  {
+    "id": "RAG007",
+    "category": "product_category",
+    "query": "Show me bridal bangles",
+    "expected_behavior": "catalog_search",
+    "expected_match": true,
+    "expected_constraints": {
+      "category": "Bangles",
+      "subcategory": "Bridal Bangles"
+    }
+  },
+  {
+    "id": "RAG008",
+    "category": "product_category",
+    "query": "Show me glass bangles",
+    "expected_behavior": "catalog_search",
+    "expected_match": true,
+    "expected_constraints": {
+      "category": "Bangles",
+      "subcategory": "Glass Bangles"
+    }
+  },
+  {
+    "id": "RAG009",
+    "category": "product_category",
+    "query": "Show me combo boxes",
+    "expected_behavior": "catalog_search",
+    "expected_match": true,
+    "expected_constraints": {
+      "category": "Bangles",
+      "subcategory": "Combo Boxes"
+    }
+  },
+  {
+    "id": "RAG010",
+    "category": "product_category",
+    "query": "Show me broad kada bangles",
+    "expected_behavior": "catalog_search",
+    "expected_match": true,
+    "expected_constraints": {
+      "category": "Bangles",
+      "subcategory": "Broad Kada Bangles"
+    }
+  },
+  {
+    "id": "RAG011",
+    "category": "product_category",
+    "query": "Show me budget kundan sets",
+    "expected_behavior": "catalog_search",
+    "expected_match": true,
+    "expected_constraints": {
+      "category": "Bangles",
+      "subcategory": "Budget Kundan Set"
+    }
+  },
+  {
+    "id": "RAG012",
+    "category": "product_category",
+    "query": "Show me ghungroo and metal bangles",
+    "expected_behavior": "catalog_search",
+    "expected_match": true,
+    "expected_constraints": {
+      "category": "Bangles",
+      "subcategory": "Ghungroo & Metal Bangles"
+    }
+  },
+  {
+    "id": "RAG013",
+    "category": "product_category",
+    "query": "Show me kids bangles",
+    "expected_behavior": "catalog_search",
+    "expected_match": true,
+    "expected_constraints": {
+      "category": "Bangles",
+      "subcategory": "Kids Bangles"
+    }
+  },
+  {
+    "id": "RAG014",
+    "category": "product_category",
+    "query": "Show me scrunchies",
+    "expected_behavior": "catalog_search",
+    "expected_match": true,
+    "expected_constraints": {
+      "category": "Hair Accessories",
+      "subcategory": "Scrunchies"
+    }
+  },
+  {
+    "id": "RAG015",
+    "category": "product_category",
+    "query": "Show me hair clips",
+    "expected_behavior": "catalog_search",
+    "expected_match": true,
+    "expected_constraints": {
+      "category": "Hair Accessories",
+      "subcategory": "Hair Clips"
+    }
+  },
+  {
+    "id": "RAG016",
+    "category": "price",
+    "query": "Show me products under ₹2000",
+    "expected_behavior": "catalog_search",
+    "expected_match": true,
+    "expected_constraints": {
+      "max_price": 2000
+    }
+  },
+  {
+    "id": "RAG017",
+    "category": "price",
+    "query": "Show me products under ₹3000",
+    "expected_behavior": "catalog_search",
+    "expected_match": true,
+    "expected_constraints": {
+      "max_price": 3000
+    }
+  },
+  {
+    "id": "RAG018",
+    "category": "price",
+    "query": "Show bridal jewellery under ₹3000",
+    "expected_behavior": "catalog_search",
+    "expected_match": true,
+    "expected_constraints": {
+      "category": "Jewellery",
+      "subcategory": "Bridal Jewellery",
+      "max_price": 3000
+    }
+  },
+  {
+    "id": "RAG019",
+    "category": "price",
+    "query": "Show products between ₹2000 and ₹5000",
+    "expected_behavior": "catalog_search",
+    "expected_match": true,
+    "expected_constraints": {
+      "min_price": 2000,
+      "max_price": 5000
+    }
+  },
+  {
+    "id": "RAG020",
+    "category": "price",
+    "query": "Show earrings under ₹500",
+    "expected_behavior": "catalog_search",
+    "expected_match": true,
+    "expected_constraints": {
+      "category": "Jewellery",
+      "subcategory": "Earrings",
+      "max_price": 500
+    }
+  },
+  {
+    "id": "RAG021",
+    "category": "price",
+    "query": "Show necklaces under ₹1000",
+    "expected_behavior": "catalog_search",
+    "expected_match": true,
+    "expected_constraints": {
+      "category": "Jewellery",
+      "subcategory": "Necklaces",
+      "max_price": 1000
+    }
+  },
+  {
+    "id": "RAG022",
+    "category": "price",
+    "query": "Show bangles under ₹500",
+    "expected_behavior": "catalog_search",
+    "expected_match": true,
+    "expected_constraints": {
+      "category": "Bangles",
+      "max_price": 500
+    }
+  },
+  {
+    "id": "RAG023",
+    "category": "price",
+    "query": "Show bridal full sets under ₹2000",
+    "expected_behavior": "catalog_search",
+    "expected_match": true,
+    "expected_constraints": {
+      "category": "Jewellery",
+      "subcategory": "Bridal Full Sets",
+      "max_price": 2000
+    }
+  },
+  {
+    "id": "RAG024",
+    "category": "price",
+    "query": "Show jhumkas under ₹500",
+    "expected_behavior": "catalog_search",
+    "expected_match": true,
+    "expected_constraints": {
+      "category": "Jewellery",
+      "subcategory": "Jhumkas",
+      "max_price": 500
+    }
+  },
+  {
+    "id": "RAG025",
+    "category": "price",
+    "query": "Show products above ₹5000",
+    "expected_behavior": "catalog_search",
+    "expected_match": true,
+    "expected_constraints": {
+      "min_price": 5000
+    }
+  },
+  {
+    "id": "RAG026",
+    "category": "size",
+    "query": "Do you have size 2.6?",
+    "expected_behavior": "catalog_search",
+    "expected_match": true,
+    "expected_constraints": {
+      "size": "2.6"
+    }
+  },
+  {
+    "id": "RAG027",
+    "category": "size",
+    "query": "Show bangles in size 2.8",
+    "expected_behavior": "catalog_search",
+    "expected_match": true,
+    "expected_constraints": {
+      "category": "Bangles",
+      "size": "2.8"
+    }
+  },
+  {
+    "id": "RAG028",
+    "category": "size",
+    "query": "Which bangles are available in size 2.6?",
+    "expected_behavior": "catalog_search",
+    "expected_match": true,
+    "expected_constraints": {
+      "category": "Bangles",
+      "size": "2.6"
+    }
+  },
+  {
+    "id": "RAG029",
+    "category": "size",
+    "query": "Do you have size 2.4?",
+    "expected_behavior": "catalog_search",
+    "expected_match": true,
+    "expected_constraints": {
+      "size": "2.4"
+    }
+  },
+  {
+    "id": "RAG030",
+    "category": "size",
+    "query": "Show bangles in size 2.2",
+    "expected_behavior": "catalog_search",
+    "expected_match": true,
+    "expected_constraints": {
+      "category": "Bangles",
+      "size": "2.2"
+    }
+  },
+  {
+    "id": "RAG031",
+    "category": "size",
+    "query": "Show bangles in size 2.10",
+    "expected_behavior": "catalog_search",
+    "expected_match": true,
+    "expected_constraints": {
+      "category": "Bangles",
+      "size": "2.10"
+    }
+  },
+  {
+    "id": "RAG032",
+    "category": "size",
+    "query": "Show bangles in size 2.12",
+    "expected_behavior": "catalog_search",
+    "expected_match": true,
+    "expected_constraints": {
+      "category": "Bangles",
+      "size": "2.12"
+    }
+  },
+  {
+    "id": "RAG033",
+    "category": "size",
+    "query": "What sizes are available for this product?",
+    "product_handle": "pink-stone-bridal-bangles",
+    "expected_behavior": "catalog_search",
+    "expected_match": true,
+    "expected_constraints": {
+      "handle": "pink-stone-bridal-bangles"
+    }
+  },
+  {
+    "id": "RAG034",
+    "category": "faq",
+    "query": "What is the return policy?",
+    "expected_behavior": "faq_retrieval",
+    "expected_topic": "returns",
+    "expected_keywords": ["return", "refund", "exchange", "unboxing"]
+  },
+  {
+    "id": "RAG035",
+    "category": "faq",
+    "query": "What are the shipping options?",
+    "expected_behavior": "faq_retrieval",
+    "expected_topic": "shipping",
+    "expected_keywords": ["shipping", "delivery", "dispatch"]
+  },
+  {
+    "id": "RAG036",
+    "category": "faq",
+    "query": "Do you ship internationally?",
+    "expected_behavior": "faq_retrieval",
+    "expected_topic": "shipping",
+    "expected_keywords": ["international", "worldwide", "canada", "whatsapp"]
+  },
+  {
+    "id": "RAG037",
+    "category": "faq",
+    "query": "Do you offer rental jewellery?",
+    "expected_behavior": "faq_retrieval",
+    "expected_topic": "rental",
+    "expected_keywords": ["rent", "rental", "pallipalayam"]
+  },
+  {
+    "id": "RAG038",
+    "category": "faq",
+    "query": "How can I contact RoSin?",
+    "expected_behavior": "faq_retrieval",
+    "expected_topic": "contact",
+    "expected_keywords": ["8438990370", "pallipalayam", "whatsapp"]
+  },
+  {
+    "id": "RAG039",
+    "category": "faq",
+    "query": "Who is the founder of RoSin?",
+    "expected_behavior": "faq_retrieval",
+    "expected_topic": "founder",
+    "expected_keywords": ["sindhu", "senthilkumar"]
+  },
+  {
+    "id": "RAG040",
+    "category": "faq",
+    "query": "What are your store opening hours?",
+    "expected_behavior": "faq_retrieval",
+    "expected_topic": "hours",
+    "expected_keywords": ["9:00", "6:00", "everyday"]
+  },
+  {
+    "id": "RAG041",
+    "category": "faq",
+    "query": "What payment methods are accepted?",
+    "expected_behavior": "faq_retrieval",
+    "expected_topic": "payments",
+    "expected_keywords": ["upi", "card", "payment"]
+  },
+  {
+    "id": "RAG042",
+    "category": "faq",
+    "query": "How do I order a customized set to match my saree?",
+    "expected_behavior": "faq_retrieval",
+    "expected_topic": "custom_matching",
+    "expected_keywords": ["custom", "saree", "outfit", "whatsapp"]
+  },
+  {
+    "id": "RAG043",
+    "category": "faq",
+    "query": "What happens if my bangles are broken or damaged in transit?",
+    "expected_behavior": "faq_retrieval",
+    "expected_topic": "damage_unboxing",
+    "expected_keywords": ["unboxing", "video", "damage", "transit"]
+  },
+  {
+    "id": "RAG044",
+    "category": "unknown",
+    "query": "What is the capital of France?",
+    "expected_behavior": "unknown_fallback"
+  },
+  {
+    "id": "RAG045",
+    "category": "unknown",
+    "query": "What is today's weather?",
+    "expected_behavior": "unknown_fallback"
+  },
+  {
+    "id": "RAG046",
+    "category": "unknown",
+    "query": "Write a Python program",
+    "expected_behavior": "unknown_fallback"
+  },
+  {
+    "id": "RAG047",
+    "category": "unknown",
+    "query": "Who won yesterday's cricket match?",
+    "expected_behavior": "unknown_fallback"
+  },
+  {
+    "id": "RAG048",
+    "category": "unknown",
+    "query": "Tell me a joke",
+    "expected_behavior": "unknown_fallback"
+  },
+  {
+    "id": "RAG049",
+    "category": "unknown",
+    "query": "Who is the president of the United States?",
+    "expected_behavior": "unknown_fallback"
+  },
+  {
+    "id": "RAG050",
+    "category": "unknown",
+    "query": "How do I bake a chocolate cake?",
+    "expected_behavior": "unknown_fallback"
+  },
+  {
+    "id": "RAG051",
+    "category": "unknown",
+    "query": "What is the current price of Bitcoin?",
+    "expected_behavior": "unknown_fallback"
+  },
+  {
+    "id": "RAG052",
+    "category": "no_match",
+    "query": "Show bridal bangles under ₹2000",
+    "expected_behavior": "catalog_search",
+    "expected_match": false,
+    "expected_constraints": {
+      "category": "Bangles",
+      "subcategory": "Bridal Bangles",
+      "max_price": 2000
+    },
+    "notes": "Bridal Bangles min price in verified catalog is ₹2340. Expected result is 0 matching products."
+  },
+  {
+    "id": "RAG053",
+    "category": "no_match",
+    "query": "Do you have size 3.5?",
+    "expected_behavior": "catalog_search",
+    "expected_match": false,
+    "expected_constraints": {
+      "size": "3.5"
+    },
+    "notes": "Verified bangle sizes are 2.2 to 2.12. Size 3.5 does not exist."
+  },
+  {
+    "id": "RAG054",
+    "category": "no_match",
+    "query": "Do you have bangles in size 1.8?",
+    "expected_behavior": "catalog_search",
+    "expected_match": false,
+    "expected_constraints": {
+      "category": "Bangles",
+      "size": "1.8"
+    },
+    "notes": "Adult bangles start at size 2.2. Size 1.8 does not exist."
+  },
+  {
+    "id": "RAG055",
+    "category": "no_match",
+    "query": "Show bridal jewellery under ₹1000",
+    "expected_behavior": "catalog_search",
+    "expected_match": false,
+    "expected_constraints": {
+      "category": "Jewellery",
+      "subcategory": "Bridal Jewellery",
+      "max_price": 1000
+    },
+    "notes": "Bridal Jewellery (waist chains) start at ₹1350. Expected match is false."
+  },
+  {
+    "id": "RAG056",
+    "category": "no_match",
+    "query": "Show products under ₹50",
+    "expected_behavior": "catalog_search",
+    "expected_match": false,
+    "expected_constraints": {
+      "max_price": 50
+    },
+    "notes": "Cheapest verified item in the entire RoSin catalog is ₹70. Expected match is false."
+  }
+]

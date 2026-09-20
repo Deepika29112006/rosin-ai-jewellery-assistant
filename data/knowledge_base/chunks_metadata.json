@@ -1,0 +1,68 @@
+[
+  {
+    "chunk_id": "kb_business_01",
+    "document_type": "business_info",
+    "file_name": "business_info.txt",
+    "product_id": null,
+    "category": "general",
+    "topic": "Business Identity & Store Location",
+    "source": "official_website",
+    "source_url": "https://rosinjewellery.com/pages/about-us",
+    "verified_date": "2026-09-18"
+  },
+  {
+    "chunk_id": "kb_shipping_01",
+    "document_type": "policy",
+    "file_name": "shipping_policy.txt",
+    "product_id": null,
+    "category": "shipping",
+    "topic": "Handmade Craft Time, Domestic & International Shipping",
+    "source": "official_website",
+    "source_url": "https://rosinjewellery.com/pages/shipping-policy",
+    "verified_date": "2026-09-18"
+  },
+  {
+    "chunk_id": "kb_returns_01",
+    "document_type": "policy",
+    "file_name": "return_policy.txt",
+    "product_id": null,
+    "category": "returns",
+    "topic": "No Return Policy, Unboxing Video Requirement & Breakage Allowance",
+    "source": "official_website",
+    "source_url": "https://rosinjewellery.com/pages/return-policy",
+    "verified_date": "2026-09-18"
+  },
+  {
+    "chunk_id": "kb_payment_01",
+    "document_type": "policy",
+    "file_name": "payment_policy.txt",
+    "product_id": null,
+    "category": "payments",
+    "topic": "Payment Methods & Advance Confirmation",
+    "source": "official_website",
+    "source_url": "https://rosinjewellery.com",
+    "verified_date": "2026-09-18"
+  },
+  {
+    "chunk_id": "kb_order_01",
+    "document_type": "faq",
+    "file_name": "order_information.txt",
+    "product_id": null,
+    "category": "orders",
+    "topic": "Custom Outfit Matching, Sizing Guide & Rentals",
+    "source": "official_website",
+    "source_url": "https://rosinjewellery.com/pages/faqs",
+    "verified_date": "2026-09-18"
+  },
+  {
+    "chunk_id": "kb_faq_01",
+    "document_type": "faq",
+    "file_name": "faq.txt",
+    "product_id": null,
+    "category": "general",
+    "topic": "Top Customer Questions & Answers",
+    "source": "official_website",
+    "source_url": "https://rosinjewellery.com/pages/faqs",
+    "verified_date": "2026-09-18"
+  }
+]

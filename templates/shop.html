@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Catalogue — RoSin Bangles & Jewellery</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Jost:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,600;0,700;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/static/css/main.css">
+  <link rel="stylesheet" href="/static/css/chatbot.css">
+  <style>
+    /* Catalog Layout Specifics */
+    .catalog-wrapper {
+      max-width: 1440px;
+      margin: 24px auto 60px;
+      padding: 0 24px;
+      display: grid;
+      grid-template-columns: 260px 1fr;
+      gap: 32px;
+      align-items: start;
+    }
+    .catalog-sidebar {
+      background: #ffffff;
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-md);
+      padding: 24px 20px;
+      height: fit-content;
+      position: sticky;
+      top: 90px;
+    }
+    .sidebar-section {
+      margin-bottom: 24px;
+      border-bottom: 1px solid #f0eee8;
+      padding-bottom: 20px;
+    }
+    .sidebar-section:last-child {
+      border-bottom: none;
+      margin-bottom: 0;
+      padding-bottom: 0;
+    }
+    .sidebar-title {
+      font-size: 14px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      margin-bottom: 12px;
+      color: var(--primary-color);
+    }
+    .cat-nav-list {
+      list-style: none;
+    }
+    .cat-nav-item {
+      padding: 8px 10px;
+      border-radius: var(--radius-sm);
+      font-size: 13.5px;
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      color: var(--text-main);
+      transition: background 0.15s;
+    }
+    .cat-nav-item:hover, .cat-nav-item.active {
+      background: var(--gold-light);
+      color: var(--primary-color);
+      font-weight: 600;
+    }
+    .subcat-list {
+      list-style: none;
+      padding-left: 14px;
+      margin-top: 4px;
+      margin-bottom: 8px;
+    }
+    .subcat-nav-item {
+      font-size: 12.5px;
+      color: var(--text-muted);
+      padding: 5px 8px;
+      border-radius: 4px;
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+    }
+    .subcat-nav-item:hover, .subcat-nav-item.active {
+      color: var(--primary-color);
+      font-weight: 600;
+      background: #faf8f5;
+    }
+    .subcat-nav-item .count {
+      font-size: 11px;
+      opacity: 0.7;
+    }
+
+    /* Size filter pills in sidebar */
+    .filter-size-group {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+    }
+    .filter-size-btn {
+      background: #ffffff;
+      border: 1px solid var(--border-color);
+      padding: 6px 12px;
+      border-radius: 4px;
+      font-size: 12px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+    .filter-size-btn.active, .filter-size-btn:hover {
+      background: var(--primary-color);
+      color: #ffffff;
+      border-color: var(--primary-color);
+    }
+
+    /* Availability Filter */
+    .filter-availability-group {
+      display: flex;
+      gap: 8px;
+    }
+    .filter-avail-btn {
+      flex: 1;
+      background: #ffffff;
+      border: 1px solid var(--border-color);
+      padding: 7px 10px;
+      border-radius: 4px;
+      font-size: 12px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.2s;
+      text-align: center;
+    }
+    .filter-avail-btn.active, .filter-avail-btn:hover {
+      background: var(--primary-color);
+      color: #ffffff;
+      border-color: var(--primary-color);
+    }
+
+    /* Price Slider */
+    .price-slider {
+      width: 100%;
+      accent-color: var(--primary-color);
+      cursor: pointer;
+      margin-bottom: 8px;
+    }
+    .price-display-label {
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--primary-color);
+    }
+
+    /* Category Header Banner */
+    .category-header-banner {
+      background: #ffffff;
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-md);
+      padding: 20px 24px;
+      margin-bottom: 20px;
+      box-shadow: var(--shadow-sm);
+    }
+    .category-breadcrumbs {
+      font-size: 12.5px;
+      color: var(--text-muted);
+      margin-bottom: 8px;
+    }
+    .category-breadcrumbs a {
+      color: var(--text-muted);
+      text-decoration: none;
+    }
+    .category-breadcrumbs a:hover {
+      color: var(--primary-color);
+      text-decoration: underline;
+    }
+    .category-breadcrumbs span {
+      margin: 0 4px;
+    }
+    .category-title-main {
+      font-family: var(--font-heading);
+      font-size: 30px;
+      font-weight: 700;
+      color: var(--primary-color);
+      margin-bottom: 4px;
+      line-height: 1.2;
+    }
+    .category-page-count {
+      font-size: 14px;
+      color: var(--text-muted);
+      font-weight: 500;
+    }
+
+    /* Catalog Top Bar */
+    .catalog-topbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 16px;
+      margin-bottom: 24px;
+      background: #ffffff;
+      padding: 14px 20px;
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-md);
+      flex-wrap: wrap;
+    }
+    .search-input-box {
+      flex-grow: 1;
+      max-width: 380px;
+      padding: 9px 14px;
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-sm);
+      font-size: 13px;
+      font-family: inherit;
+      outline: none;
+    }
+    .search-input-box:focus {
+      border-color: var(--primary-color);
+    }
+    .sort-dropdown {
+      padding: 9px 12px;
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-sm);
+      font-size: 13px;
+      font-family: inherit;
+      background: #ffffff;
+      outline: none;
+      cursor: pointer;
+    }
+
+    @media (max-width: 950px) {
+      .catalog-wrapper {
+        grid-template-columns: 1fr;
+        padding: 0 16px;
+      }
+      .catalog-sidebar {
+        position: static;
+      }
+    }
+    @media (max-width: 600px) {
+      .catalog-wrapper {
+        padding: 0 10px;
+        margin: 16px auto 40px;
+      }
+      .category-header-banner {
+        padding: 14px 16px;
+        margin-bottom: 14px;
+      }
+      .category-title-main {
+        font-size: 22px;
+      }
+      .category-page-count {
+        font-size: 12.5px;
+      }
+      .catalog-topbar {
+        padding: 12px;
+        gap: 10px;
+      }
+      .search-input-box {
+        max-width: 100%;
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ANNOUNCEMENT BAR -->
+  <div class="announcement-bar">
+    <span>✨ Verified Real Store Data | Bangles & Jewellery Handcrafted by Women Artisans</span>
+    <a href="https://wa.me/918438990370" target="_blank" rel="noopener">WhatsApp: +91 8438990370</a>
+  </div>
+
+  <!-- MAIN HEADER -->
+  <header class="main-header">
+    <div class="header-container">
+      <a href="/" class="brand-logo">
+        <span class="brand-title">RoSin</span>
+        <span class="brand-subtitle">Bangles & Jewellery</span>
+      </a>
+
+      <nav>
+        <ul class="nav-links">
+          <li><a href="/">Home</a></li>
+          <li><a href="/shop" class="active">All Collections</a></li>
+          <li><a href="/shop?category=Bangles">Bangles</a></li>
+          <li><a href="/shop?category=Jewellery">Jewellery</a></li>
+          <li><a href="/about">About & Policies</a></li>
+        </ul>
+      </nav>
+
+      <div class="header-actions">
+        <button class="btn-ai-nav" title="Ask AI Assistant">
+          <span>✨</span> Ask Assistant
+        </button>
+        <a href="/wishlist" class="wishlist-icon-btn" title="View Wishlist">
+          <span class="wishlist-heart-icon">♡</span> Wishlist
+          <span class="wishlist-badge">0</span>
+        </a>
+        <a href="/cart" class="cart-icon-btn">
+          <span>🛒 Cart</span>
+          <span class="cart-badge">0</span>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- CATALOG MAIN -->
+  <main class="catalog-wrapper">
+    <!-- SIDEBAR FILTERS -->
+    <aside class="catalog-sidebar">
+      <div class="sidebar-section">
+        <div class="sidebar-title">Categories</div>
+        <ul class="cat-nav-list" id="category-filter-list">
+          <!-- Injected via JavaScript -->
+        </ul>
+      </div>
+
+      <div class="sidebar-section">
+        <div class="sidebar-title">Filter by Size</div>
+        <div class="filter-size-group">
+          <button class="filter-size-btn" data-size="2.2">2.2</button>
+          <button class="filter-size-btn" data-size="2.4">2.4 (6cm)</button>
+          <button class="filter-size-btn" data-size="2.6">2.6 (6.3-6.5cm)</button>
+          <button class="filter-size-btn" data-size="2.8">2.8 (6.7cm)</button>
+          <button class="filter-size-btn" data-size="Kids">Kids</button>
+        </div>
+      </div>
+
+      <div class="sidebar-section">
+        <div class="sidebar-title">Availability</div>
+        <div class="filter-availability-group">
+          <button class="filter-avail-btn active" data-avail="">All Items</button>
+          <button class="filter-avail-btn" data-avail="in_stock">In Stock</button>
+        </div>
+      </div>
+
+      <div class="sidebar-section">
+        <div class="sidebar-title">Maximum Price</div>
+        <input type="range" class="price-slider" id="price-range-slider" min="50" max="3500" step="50" value="3500">
+        <div class="price-display-label" id="price-display">Up to ₹3,500</div>
+      </div>
+
+      <button class="btn-outline" id="clear-filters-btn" style="width: 100%; color: var(--primary-color); border-color: var(--border-color); font-size: 12px; padding: 8px;">
+        Clear All Filters
+      </button>
+    </aside>
+
+    <!-- MAIN PRODUCT LISTING -->
+    <section>
+      <!-- CATEGORY HEADER -->
+      <div class="category-header-banner">
+        <div class="category-breadcrumbs" id="category-breadcrumbs">
+          <a href="/">Home</a> <span>›</span> <a href="/shop" id="breadcrumb-root">All Collections</a> <span id="breadcrumb-cat-sep" style="display:none;">›</span> <span id="breadcrumb-cat" style="display:none;"></span> <span id="breadcrumb-subcat-sep" style="display:none;">›</span> <span id="breadcrumb-subcat" style="display:none;"></span>
+        </div>
+        <h1 class="category-title-main" id="category-page-title">All Collections</h1>
+        <div class="category-page-count" id="category-page-count">110 verified products</div>
+      </div>
+
+      <div class="catalog-topbar">
+        <input type="text" class="search-input-box" id="search-input" placeholder="Search by product name, color, style...">
+        
+        <div style="display: flex; align-items: center; gap: 12px;">
+          <span style="font-size: 13px; color: var(--text-muted);" id="products-count-badge">Loading...</span>
+          <select class="sort-dropdown" id="sort-select">
+            <option value="featured">Featured</option>
+            <option value="price_asc">Price: Low to High</option>
+            <option value="price_desc">Price: High to Low</option>
+            <option value="name">Alphabetical (A - Z)</option>
+          </select>
+        </div>
+      </div>
+
+      <!-- PRODUCT GRID -->
+      <div class="products-grid" id="products-grid">
+        <!-- Injected via catalog.js -->
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="main-footer">
+    <div class="footer-container">
+      <div class="footer-col">
+        <h4 style="font-family: var(--font-heading); font-size: 22px; color: #ffde59;">RoSin</h4>
+        <p>Pallipalayam craft studio specializing in handmade silk thread bangles, bridal glass sets, and imitation jewellery.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Navigation</h4>
+        <ul class="footer-links">
+          <li><a href="/">Home</a></li>
+          <li><a href="/shop">Shop Catalogue</a></li>
+          <li><a href="/wishlist">My Wishlist</a></li>
+          <li><a href="/about">About & Policies</a></li>
+          <li><a href="/cart">Cart</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Verified Policies</h4>
+        <ul class="footer-links">
+          <li><a href="/about#shipping">Shipping Timeline</a></li>
+          <li><a href="/about#returns">Strict No-Return Policy</a></li>
+          <li><a href="/about#unboxing">Unboxing Video Requirement</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <p><strong>WhatsApp:</strong> +91 8438990370</p>
+        <p><strong>Email:</strong> rosinfashionjewellery@gmail.com</p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      &copy; 2026 RoSin Bangles & Jewellery. Verified Hackathon Prototype.
+    </div>
+  </footer>
+
+  <!-- SCRIPTS -->
+  <script src="/static/js/main.js"></script>
+  <script src="/static/js/catalog.js"></script>
+  <script src="/static/js/chatbot.js"></script>
+</body>
+</html>

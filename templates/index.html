@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>RoSin — AI-Powered Bangles & Jewellery Shopping Assistant</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Jost:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,600;0,700;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/static/css/main.css">
+  <link rel="stylesheet" href="/static/css/chatbot.css">
+</head>
+<body>
+
+  <!-- ANNOUNCEMENT BAR -->
+  <div class="announcement-bar">
+    <span>✨ Handcrafted with passion by women artisans in Tamil Nadu | Worldwide shipping available</span>
+    <a href="https://wa.me/918438990370" target="_blank" rel="noopener">WhatsApp: +91 8438990370</a>
+  </div>
+
+  <!-- MAIN HEADER -->
+  <header class="main-header">
+    <div class="header-container">
+      <a href="/" class="brand-logo">
+        <span class="brand-title">RoSin</span>
+        <span class="brand-subtitle">Bangles & Jewellery</span>
+      </a>
+
+      <nav>
+        <ul class="nav-links">
+          <li><a href="/" class="active">Home</a></li>
+          <li><a href="/shop">All Collections</a></li>
+          <li><a href="/shop?category=Bangles">Bangles</a></li>
+          <li><a href="/shop?category=Jewellery">Jewellery</a></li>
+          <li><a href="/about">About & Policies</a></li>
+        </ul>
+      </nav>
+
+      <div class="header-actions">
+        <button class="btn-ai-nav" title="Ask AI Assistant">
+          <span>✨</span> Ask Assistant
+        </button>
+        <a href="/wishlist" class="wishlist-icon-btn" title="View Wishlist">
+          <span class="wishlist-heart-icon">♡</span> Wishlist
+          <span class="wishlist-badge">0</span>
+        </a>
+        <a href="/cart" class="cart-icon-btn">
+          <span>🛒 Cart</span>
+          <span class="cart-badge">0</span>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- HERO SECTION -->
+  <section class="hero-section">
+    <div class="hero-content">
+      <div class="hero-tagline">Authentic Handcrafted Elegance</div>
+      <h1 class="hero-title">Bangles & Bridal Jewellery Made Just For You</h1>
+      <p class="hero-desc">
+        Discover exquisite handmade silk-thread sets, bridal glass bangles, and festive imitation jewellery. Personalized matching for sarees and lehengas.
+      </p>
+      <div class="hero-btns">
+        <a href="/shop" class="btn-primary">Explore 110 Verified Products</a>
+        <button class="btn-outline btn-ai-nav">✨ Ask AI Assistant</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- FEATURED CATEGORIES -->
+  <section class="section-container">
+    <div class="section-header">
+      <h2 class="section-title">Curated Collections</h2>
+      <p class="section-subtitle">Explore authentic handmade collections verified directly from RoSin's boutique</p>
+    </div>
+
+    <div class="category-cards-grid">
+      <!-- Bridal Bangles -->
+      <a href="/shop?subcategory=Bridal+Bangles" class="category-card">
+        <img src="https://cdn.shopify.com/s/files/1/0650/8193/4014/files/IMG-20260915_222443.jpg?v=1789491317" alt="Bridal Bangles" class="category-card-img">
+        <div class="category-card-body">
+          <h3 class="category-card-title">Bridal Sets</h3>
+          <div class="category-card-count">Intricate Stone & Pearl Bangles</div>
+        </div>
+      </a>
+
+      <!-- Glass Bangles -->
+      <a href="/shop?subcategory=Glass+Bangles" class="category-card">
+        <img src="https://cdn.shopify.com/s/files/1/0650/8193/4014/files/IMG-20260707_191930.jpg?v=1783432255" alt="Glass Bangles" class="category-card-img">
+        <div class="category-card-body">
+          <h3 class="category-card-title">Glass Bangles</h3>
+          <div class="category-card-count">Jelly & Multi-Color Dozens</div>
+        </div>
+      </a>
+
+      <!-- Budget Kundan Sets -->
+      <a href="/shop?subcategory=Budget+Kundan+Set" class="category-card">
+        <img src="https://cdn.shopify.com/s/files/1/0650/8193/4014/files/IMG-20260824_123549.jpg?v=1789490366" alt="Budget Kundan Set" class="category-card-img">
+        <div class="category-card-body">
+          <h3 class="category-card-title">Kundan Sets</h3>
+          <div class="category-card-count">Affordable Luxury Bangle Sets</div>
+        </div>
+      </a>
+
+      <!-- Jewellery -->
+      <a href="/shop?category=Jewellery" class="category-card">
+        <img src="https://cdn.shopify.com/s/files/1/0650/8193/4014/files/IMG-20250330_131152.jpg?v=1743330693" alt="Jewellery" class="category-card-img">
+        <div class="category-card-body">
+          <h3 class="category-card-title">Necklaces & Earrings</h3>
+          <div class="category-card-count">Chokers & Festive Sets</div>
+        </div>
+      </a>
+    </div>
+  </section>
+
+  <!-- FEATURED PRODUCTS PREVIEW -->
+  <section class="section-container" style="padding-top: 0;">
+    <div class="section-header">
+      <h2 class="section-title">Featured Handcrafted Products</h2>
+      <p class="section-subtitle">Real pricing, verified stock, and exact size specifications</p>
+    </div>
+
+    <div class="products-grid" id="home-featured-grid">
+      <!-- Injected via JavaScript -->
+    </div>
+
+    <div style="text-align: center; margin-top: 36px;">
+      <a href="/shop" class="btn-primary" style="padding: 14px 36px;">View Full 110-Product Catalogue &rarr;</a>
+    </div>
+  </section>
+
+  <!-- VALUES / TRUST BANNER -->
+  <section class="trust-banner">
+    <div class="trust-grid">
+      <div class="trust-item">
+        <div class="trust-item-icon">👩‍🎨</div>
+        <div class="trust-item-title">Women Artisan Led</div>
+        <div class="trust-item-desc">Handcrafted in Pallipalayam, supporting skilled local craftswomen.</div>
+      </div>
+      <div class="trust-item">
+        <div class="trust-item-icon">🎨</div>
+        <div class="trust-item-title">Custom Outfit Matching</div>
+        <div class="trust-item-desc">Send your saree or lehenga photo on WhatsApp for custom-matched bangles.</div>
+      </div>
+      <div class="trust-item">
+        <div class="trust-item-icon">✈️</div>
+        <div class="trust-item-title">Worldwide Shipping</div>
+        <div class="trust-item-desc">Reliable domestic shipping across India & international worldwide shipping.</div>
+      </div>
+      <div class="trust-item">
+        <div class="trust-item-icon">🤖</div>
+        <div class="trust-item-title">AI-Powered Assistant</div>
+        <div class="trust-item-desc">Ask questions about sizes, prices, and policies with zero hallucinations.</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHATSAPP CUSTOMIZATION CTA -->
+  <section class="whatsapp-banner">
+    <div class="whatsapp-banner-content">
+      <h2>Have a Saree to Match?</h2>
+      <p>All our bangle sets can be customized to match your wedding or festive outfit. Send your dress photo directly on WhatsApp!</p>
+    </div>
+    <a href="https://wa.me/918438990370?text=Hi%20RoSin,%20I%20have%20an%20outfit%20I%20would%20like%20to%20match%20with%20bangles!" target="_blank" rel="noopener" class="btn-whatsapp-banner">
+      <span>💬 Chat on WhatsApp (+91 8438990370)</span>
+    </a>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="main-footer">
+    <div class="footer-container">
+      <div class="footer-col">
+        <h4 style="font-family: var(--font-heading); font-size: 22px; color: #ffde59;">RoSin</h4>
+        <p style="margin-bottom: 12px;">
+          Founded in 2021 by <strong>Sindhu Senthilkumar</strong>. Our sanctuary in Pallipalayam blends affordable elegance with impeccable traditional craftsmanship.
+        </p>
+        <p><strong>Physical Store:</strong> RS Road, opp. SK Consulting, Erode - Pallipalayam Rd, Pallipalayam, Tamil Nadu 638006</p>
+      </div>
+
+      <div class="footer-col">
+        <h4>Quick Navigation</h4>
+        <ul class="footer-links">
+          <li><a href="/">Home</a></li>
+          <li><a href="/shop">All Products (110)</a></li>
+          <li><a href="/shop?category=Bangles">Bangles Collection</a></li>
+          <li><a href="/shop?category=Jewellery">Jewellery Collection</a></li>
+          <li><a href="/wishlist">My Wishlist</a></li>
+          <li><a href="/cart">Your Shopping Cart</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Verified Policies</h4>
+        <ul class="footer-links">
+          <li><a href="/about#shipping">Shipping (7-10 Days)</a></li>
+          <li><a href="/about#returns">Strict No-Return Policy</a></li>
+          <li><a href="/about#unboxing">Unboxing Video Criteria</a></li>
+          <li><a href="/about#sizing">Bangle Size Guide (2.4, 2.6, 2.8)</a></li>
+          <li><a href="/about#rentals">Bridal Rentals</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Contact & Hours</h4>
+        <p style="margin-bottom: 8px;"><strong>Hours:</strong> Everyday 9:00 AM – 6:00 PM IST</p>
+        <p style="margin-bottom: 8px;"><strong>WhatsApp:</strong> <a href="https://wa.me/918438990370" style="color:#25d366;">+91 8438990370</a></p>
+        <p style="margin-bottom: 8px;"><strong>Email:</strong> rosinfashionjewellery@gmail.com</p>
+        <p><strong>Instagram:</strong> <a href="https://instagram.com/rosin_bangles" target="_blank" rel="noopener" style="color:#ffde59;">@rosin_bangles</a></p>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      &copy; 2026 RoSin Bangles & Jewellery. Built with real verified business data for the Hackathon.
+    </div>
+  </footer>
+
+  <!-- JAVASCRIPT ASSETS -->
+  <script src="/static/js/main.js"></script>
+  <script src="/static/js/chatbot.js"></script>
+  <script>
+    // Fetch 8 featured products for homepage
+    fetch('/api/products?sort=featured')
+      .then(res => res.json())
+      .then(data => {
+        const grid = document.getElementById('home-featured-grid');
+        if (!grid || !data.success) return;
+        const sample = data.products.slice(0, 8);
+        grid.innerHTML = '';
+        sample.forEach(p => {
+          const card = document.createElement('div');
+          card.className = 'product-card';
+          const sizesHtml = p.sizes && p.sizes.length > 0
+            ? p.sizes.slice(0, 3).map(s => `<span class="size-pill">${s}</span>`).join('')
+            : '<span class="size-pill" style="background:#eee;color:#888;border:none;">Standard</span>';
+
+          const inWish = isInWishlist(p.id);
+
+          card.innerHTML = `
+            <div class="product-card-img-wrapper">
+              <span class="badge-subcat">${p.subcategory || p.category}</span>
+              <button class="btn-wishlist-heart ${inWish ? 'active' : ''}" data-id="${p.id}" title="${inWish ? 'Remove from Wishlist' : 'Add to Wishlist'}" aria-label="Toggle Wishlist">${inWish ? '♥' : '♡'}</button>
+              <img src="${p.image_url}" alt="${p.title}" class="product-card-img" onerror="this.src='https://via.placeholder.com/300x300?text=RoSin+Jewellery'">
+            </div>
+            <div class="product-card-body">
+              <h3 class="product-card-title">${p.title}</h3>
+              <div class="product-card-price">₹${Number(p.price).toLocaleString('en-IN')}</div>
+              <div class="product-card-sizes">${sizesHtml}</div>
+              <div class="product-card-actions">
+                <a href="/product/${p.handle}" class="btn-card-view">View Details</a>
+                <button class="btn-card-cart">Add to Cart</button>
+              </div>
+            </div>
+          `;
+
+          // Wishlist toggle listener
+          card.querySelector('.btn-wishlist-heart').addEventListener('click', (e) => {
+            e.stopPropagation();
+            e.preventDefault();
+            toggleWishlist(p);
+          });
+
+          // Cart listener
+          card.querySelector('.btn-card-cart').addEventListener('click', () => {
+            const defSize = p.sizes && p.sizes.length > 0 ? p.sizes[0] : null;
+            addToCart(p, defSize, null, 1);
+          });
+          grid.appendChild(card);
+        });
+      })
+      .catch(err => console.error(err));
+  </script>
+</body>
+</html>

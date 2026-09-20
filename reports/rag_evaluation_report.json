@@ -1,0 +1,2026 @@
+{
+  "summary": {
+    "timestamp": "2026-09-20T20:16:55.986149",
+    "total_tests": 56,
+    "passed": 56,
+    "failed": 0,
+    "overall_accuracy_pct": 100.0,
+    "metrics": {
+      "retrieval_success_rate_pct": 100.0,
+      "retrieval_success_count": "38/38",
+      "constraint_accuracy_pct": 100.0,
+      "constraint_accuracy_count": "33/33",
+      "faq_retrieval_rate_pct": 100.0,
+      "faq_retrieval_count": "10/10",
+      "unknown_refusal_rate_pct": 100.0,
+      "unknown_refusal_count": "8/8",
+      "grounding_check_pct": 100.0,
+      "grounding_check_count": "56/56"
+    },
+    "category_counts": {
+      "product_category": 15,
+      "price": 10,
+      "size": 8,
+      "faq": 10,
+      "unknown": 8,
+      "no_match": 5
+    }
+  },
+  "test_results": [
+    {
+      "id": "RAG001",
+      "category": "product_category",
+      "query": "Show me necklaces",
+      "intent": "catalog_search",
+      "num_products_returned": 4,
+      "returned_products": [
+        {
+          "id": "8414418272446",
+          "title": "P-623 anti tarnish necklace",
+          "price": 299.0,
+          "subcategory": "Necklaces"
+        },
+        {
+          "id": "8414417453246",
+          "title": "P-625 anti tarnish necklace",
+          "price": 299.0,
+          "subcategory": "Necklaces"
+        },
+        {
+          "id": "8456821866686",
+          "title": "Star invisible necklace",
+          "price": 349.0,
+          "subcategory": "Necklaces"
+        },
+        {
+          "id": "8819053756606",
+          "title": "Cute minimal diamond replica necklace (with backchain)",
+          "price": 550.0,
+          "subcategory": "Necklaces"
+        }
+      ],
+      "reply_snippet": "Here are verified Necklaces from RoSin's collection:",
+      "citations": [
+        "RoSin Verified Product Catalog"
+      ],
+      "checks": {
+        "retrieval_pass": true,
+        "constraint_pass": true,
+        "unknown_pass": false,
+        "faq_pass": false,
+        "grounding_pass": true,
+        "overall_pass": true,
+        "failure_reasons": []
+      },
+      "passed": true,
+      "failure_reasons": []
+    },
+    {
+      "id": "RAG002",
+      "category": "product_category",
+      "query": "Show me earrings",
+      "intent": "catalog_search",
+      "num_products_returned": 4,
+      "returned_products": [
+        {
+          "id": "8055206903998",
+          "title": "Rose stud",
+          "price": 150.0,
+          "subcategory": "Earrings"
+        },
+        {
+          "id": "8055207297214",
+          "title": "Coin lotus stud",
+          "price": 150.0,
+          "subcategory": "Earrings"
+        },
+        {
+          "id": "8055354851518",
+          "title": "Purple Lily stud",
+          "price": 150.0,
+          "subcategory": "Earrings"
+        },
+        {
+          "id": "8934815170750",
+          "title": "Beautiful gold tone diamond finish floral earrings",
+          "price": 650.0,
+          "subcategory": "Earrings"
+        }
+      ],
+      "reply_snippet": "Here are verified Earrings from RoSin's collection:",
+      "citations": [
+        "RoSin Verified Product Catalog"
+      ],
+      "checks": {
+        "retrieval_pass": true,
+        "constraint_pass": true,
+        "unknown_pass": false,
+        "faq_pass": false,
+        "grounding_pass": true,
+        "overall_pass": true,
+        "failure_reasons": []
+      },
+      "passed": true,
+      "failure_reasons": []
+    },
+    {
+      "id": "RAG003",
+      "category": "product_category",
+      "query": "Show me jhumkas",
+      "intent": "catalog_search",
+      "num_products_returned": 4,
+      "returned_products": [
+        {
+          "id": "8055301767358",
+          "title": "Green and pink jhumki",
+          "price": 249.0,
+          "subcategory": "Jhumkas"
+        },
+        {
+          "id": "8055303078078",
+          "title": "Pink and blue jhumki",
+          "price": 249.0,
+          "subcategory": "Jhumkas"
+        },
+        {
+          "id": "8063545114814",
+          "title": "Golden jhumka",
+          "price": 249.0,
+          "subcategory": "Jhumkas"
+        },
+        {
+          "id": "8055349215422",
+          "title": "Gold jhumki",
+          "price": 269.0,
+          "subcategory": "Jhumkas"
+        }
+      ],
+      "reply_snippet": "Here are verified Jhumkas from RoSin's collection:",
+      "citations": [
+        "RoSin Verified Product Catalog"
+      ],
+      "checks": {
+        "retrieval_pass": true,
+        "constraint_pass": true,
+        "unknown_pass": false,
+        "faq_pass": false,
+        "grounding_pass": true,
+        "overall_pass": true,
+        "failure_reasons": []
+      },
+      "passed": true,
+      "failure_reasons": []
+    },
+    {
+      "id": "RAG004",
+      "category": "product_category",
+      "query": "Show me bridal jewellery",
+      "intent": "catalog_search",
+      "num_products_returned": 2,
+      "returned_products": [
+        {
+          "id": "8787500236990",
+          "title": "Leaf diamond lookalike hipchain",
+          "price": 2599.0,
+          "subcategory": "Bridal Jewellery"
+        },
+        {
+          "id": "8787498565822",
+          "title": "Victorian diamond replica hipchain",
+          "price": 3599.0,
+          "subcategory": "Bridal Jewellery"
+        }
+      ],
+      "reply_snippet": "Here are verified Bridal Jewellery from RoSin's collection:",
+      "citations": [
+        "RoSin Verified Product Catalog"
+      ],
+      "checks": {
+        "retrieval_pass": true,
+        "constraint_pass": true,
+        "unknown_pass": false,
+        "faq_pass": false,
+        "grounding_pass": true,
+        "overall_pass": true,
+        "failure_reasons": []
+      },
+      "passed": true,
+      "failure_reasons": []
+    },
+    {
+      "id": "RAG005",
+      "category": "product_category",
+      "query": "Show me bridal full sets",
+      "intent": "catalog_search",
+      "num_products_returned": 4,
+      "returned_products": [
+        {
+          "id": "8819053559998",
+          "title": "Gold replica with ad stone necklace set(with backchain)",
+          "price": 650.0,
+          "subcategory": "Bridal Full Sets"
+        },
+        {
+          "id": "8698536427710",
+          "title": "Peacock diamond replica set",
+          "price": 799.0,
+          "subcategory": "Bridal Full Sets"
+        },
+        {
+          "id": "8698548355262",
+          "title": "Thamara lotus gold replica necklace",
+          "price": 990.0,
+          "subcategory": "Bridal Full Sets"
+        },
+        {
+          "id": "8856277942462",
+          "title": "Coin haaram traditional with earrings and back chain",
+          "price": 1199.0,
+          "subcategory": "Bridal Full Sets"
+        }
+      ],
+      "reply_snippet": "Here are verified Bridal Full Sets from RoSin's collection:",
+      "citations": [
+        "RoSin Verified Product Catalog"
+      ],
+      "checks": {
+        "retrieval_pass": true,
+        "constraint_pass": true,
+        "unknown_pass": false,
+        "faq_pass": false,
+        "grounding_pass": true,
+        "overall_pass": true,
+        "failure_reasons": []
+      },
+      "passed": true,
+      "failure_reasons": []
+    },
+    {
+      "id": "RAG006",
+      "category": "product_category",
+      "query": "Show me bridal combo sets",
+      "intent": "catalog_search",
+      "num_products_returned": 4,
+      "returned_products": [
+        {
+          "id": "8932074913982",
+          "title": "Four line royal kanti with kundhan green pendant and earrings set",
+          "price": 6999.0,
+          "subcategory": "Bridal Combo Sets"
+        },
+        {
+          "id": "8932071866558",
+          "title": "Royal multi line kati with Victorian white pendant set",
+          "price": 8999.0,
+          "subcategory": "Bridal Combo Sets"
+        },
+        {
+          "id": "8932071932094",
+          "title": "Intricate triple colour spiral kanti with Victorian pink pendant set",
+          "price": 9999.0,
+          "subcategory": "Bridal Combo Sets"
+        },
+        {
+          "id": "8932072063166",
+          "title": "Royal multi layer kanti with pink Victorian pendant with earrings",
+          "price": 10100.0,
+          "subcategory": "Bridal Combo Sets"
+        }
+      ],
+      "reply_snippet": "Here are verified Bridal Combo Sets from RoSin's collection:",
+      "citations": [
+        "RoSin Verified Product Catalog"
+      ],
+      "checks": {
+        "retrieval_pass": true,
+        "constraint_pass": true,
+        "unknown_pass": false,
+        "faq_pass": false,
+        "grounding_pass": true,
+        "overall_pass": true,
+        "failure_reasons": []
+      },
+      "passed": true,
+      "failure_reasons": []
+    },
+    {
+      "id": "RAG007",
+      "category": "product_category",
+      "query": "Show me bridal bangles",
+      "intent": "catalog_search",
+      "num_products_returned": 4,
+      "returned_products": [
+        {
+          "id": "8352466206910",
+          "title": "Radhakrishnan darkgreen muhurtham bridal set",
+          "price": 2340.0,
+          "subcategory": "Bridal Bangles"
+        },
+        {
+          "id": "8358136774846",
+          "title": "Yellow and darkgreen bridal set (18 bangles)",
+          "price": 2620.0,
+          "subcategory": "Bridal Bangles"
+        },
+        {
+          "id": "8347441889470",
+          "title": "Red and mango yellow bridal set",
+          "price": 2620.0,
+          "subcategory": "Bridal Bangles"
+        },
+        {
+          "id": "8369345790142",
+          "title": "Royal blue and white bridal set",
+          "price": 2640.0,
+          "subcategory": "Bridal Bangles"
+        }
+      ],
+      "reply_snippet": "Here are verified Bridal Bangles from RoSin's collection:",
+      "citations": [
+        "RoSin Verified Product Catalog"
+      ],
+      "checks": {
+        "retrieval_pass": true,
+        "constraint_pass": true,
+        "unknown_pass": false,
+        "faq_pass": false,
+        "grounding_pass": true,
+        "overall_pass": true,
+        "failure_reasons": []
+      },
+      "passed": true,
+      "failure_reasons": []
+    },
+    {
+      "id": "RAG008",
+      "category": "product_category",
+      "query": "Show me glass bangles",
+      "intent": "catalog_search",
+      "num_products_returned": 4,
+      "returned_products": [
+        {
+          "id": "8865942274238",
+          "title": "Nithila glass bangles (1 dozen)",
+          "price": 249.0,
+          "subcategory": "Glass Bangles"
+        },
+        {
+          "id": "8841117434046",
+          "title": "Chandra x Diya mix (2 hands)",
+          "price": 840.0,
+          "subcategory": "Glass Bangles"
+        },
+        {
+          "id": "8948888535230",
+          "title": "6mm jelly ghungroo stack (1 set 18 bangles)",
+          "price": 970.0,
+          "subcategory": "Glass Bangles"
+        },
+        {
+          "id": "8271088484542",
+          "title": "Metal bangles plain",
+          "price": 1000.0,
+          "subcategory": "Glass Bangles"
+        }
+      ],
+      "reply_snippet": "Here are verified Glass Bangles from RoSin's collection:",
+      "citations": [
+        "RoSin Verified Product Catalog"
+      ],
+      "checks": {
+        "retrieval_pass": true,
+        "constraint_pass": true,
+        "unknown_pass": false,
+        "faq_pass": false,
+        "grounding_pass": true,
+        "overall_pass": true,
+        "failure_reasons": []
+      },
+      "passed": true,
+      "failure_reasons": []
+    },
+    {
+      "id": "RAG009",
+      "category": "product_category",
+      "query": "Show me combo boxes",
+      "intent": "catalog_search",
+      "num_products_returned": 4,
+      "returned_products": [
+        {
+          "id": "8567012393150",
+          "title": "2.2 plain combo box (10 colour set)",
+          "price": 800.0,
+          "subcategory": "Combo Boxes"
+        },
+        {
+          "id": "8697089294526",
+          "title": "Valentine's combo box 2",
+          "price": 2370.0,
+          "subcategory": "Combo Boxes"
+        },
+        {
+          "id": "8811854201022",
+          "title": "Baby pink combo gift box (10 selective sets without box)",
+          "price": 2500.0,
+          "subcategory": "Combo Boxes"
+        },
+        {
+          "id": "8805303386302",
+          "title": "White combo gift box(10 selective sets) without box",
+          "price": 2500.0,
+          "subcategory": "Combo Boxes"
+        }
+      ],
+      "reply_snippet": "Here are verified Combo Boxes from RoSin's collection:",
+      "citations": [
+        "RoSin Verified Product Catalog"
+      ],
+      "checks": {
+        "retrieval_pass": true,
+        "constraint_pass": true,
+        "unknown_pass": false,
+        "faq_pass": false,
+        "grounding_pass": true,
+        "overall_pass": true,
+        "failure_reasons": []
+      },
+      "passed": true,
+      "failure_reasons": []
+    },
+    {
+      "id": "RAG010",
+      "category": "product_category",
+      "query": "Show me broad kada bangles",
+      "intent": "catalog_search",
+      "num_products_returned": 4,
+      "returned_products": [
+        {
+          "id": "8825745866942",
+          "title": "Tulasi kids kada (2 bangles)",
+          "price": 90.0,
+          "subcategory": "Broad Kada Bangles"
+        },
+        {
+          "id": "8040798224574",
+          "title": "Leaf thin bangle",
+          "price": 190.0,
+          "subcategory": "Broad Kada Bangles"
+        },
+        {
+          "id": "8893563273406",
+          "title": "Rajasthan Lac bangles(2 bangles)",
+          "price": 250.0,
+          "subcategory": "Broad Kada Bangles"
+        },
+        {
+          "id": "8048296296638",
+          "title": "Diamond daisy broad kada",
+          "price": 490.0,
+          "subcategory": "Broad Kada Bangles"
+        }
+      ],
+      "reply_snippet": "Here are verified Broad Kada Bangles from RoSin's collection:",
+      "citations": [
+        "RoSin Verified Product Catalog"
+      ],
+      "checks": {
+        "retrieval_pass": true,
+        "constraint_pass": true,
+        "unknown_pass": false,
+        "faq_pass": false,
+        "grounding_pass": true,
+        "overall_pass": true,
+        "failure_reasons": []
+      },
+      "passed": true,
+      "failure_reasons": []
+    },
+    {
+      "id": "RAG011",
+      "category": "product_category",
+      "query": "Show me budget kundan sets",
+      "intent": "catalog_search",
+      "num_products_returned": 4,
+      "returned_products": [
+        {
+          "id": "8934847873214",
+          "title": "Budget cute glass mix sets (1 set 16 bangles)",
+          "price": 650.0,
+          "subcategory": "Budget Kundan Set"
+        },
+        {
+          "id": "8934846431422",
+          "title": "Budget cute glass mix sets (1 set with 16 bangles)",
+          "price": 650.0,
+          "subcategory": "Budget Kundan Set"
+        },
+        {
+          "id": "8934845743294",
+          "title": "Budget cute glass mixed sets(1 set with 16 bangles)",
+          "price": 650.0,
+          "subcategory": "Budget Kundan Set"
+        },
+        {
+          "id": "8352463749310",
+          "title": "Red Rose bridal set (7 bangles)",
+          "price": 1430.0,
+          "subcategory": "Budget Kundan Set"
+        }
+      ],
+      "reply_snippet": "Here are verified Budget Kundan Set from RoSin's collection:",
+      "citations": [
+        "RoSin Verified Product Catalog"
+      ],
+      "checks": {
+        "retrieval_pass": true,
+        "constraint_pass": true,
+        "unknown_pass": false,
+        "faq_pass": false,
+        "grounding_pass": true,
+        "overall_pass": true,
+        "failure_reasons": []
+      },
+      "passed": true,
+      "failure_reasons": []
+    },
+    {
+      "id": "RAG012",
+      "category": "product_category",
+      "query": "Show me ghungroo and metal bangles",
+      "intent": "catalog_search",
+      "num_products_returned": 2,
+      "returned_products": [
+        {
+          "id": "8739199615166",
+          "title": "Lovely metal bangles (8 bangles)",
+          "price": 220.0,
+          "subcategory": "Ghungroo & Metal Bangles"
+        },
+        {
+          "id": "8641982857406",
+          "title": "Viral kashmiri ghungroo bangles (4 bangles)",
+          "price": 299.0,
+          "subcategory": "Ghungroo & Metal Bangles"
+        }
+      ],
+      "reply_snippet": "Here are verified Ghungroo & Metal Bangles from RoSin's collection:",
+      "citations": [
+        "RoSin Verified Product Catalog"
+      ],
+      "checks": {
+        "retrieval_pass": true,
+        "constraint_pass": true,
+        "unknown_pass": false,
+        "faq_pass": false,
+        "grounding_pass": true,
+        "overall_pass": true,
+        "failure_reasons": []
+      },
+      "passed": true,
+      "failure_reasons": []
+    },
+    {
+      "id": "RAG013",
+      "category": "product_category",
+      "query": "Show me kids bangles",
+      "intent": "catalog_search",
+      "num_products_returned": 1,
+      "returned_products": [
+        {
+          "id": "8510811865278",
+          "title": "Kids glass kada model 2 (2 bangles)",
+          "price": 70.0,
+          "subcategory": "Kids Bangles"
+        }
+      ],
+      "reply_snippet": "Here are verified Kids Bangles from RoSin's collection:",
+      "citations": [
+        "RoSin Verified Product Catalog"
+      ],
+      "checks": {
+        "retrieval_pass": true,
+        "constraint_pass": true,
+        "unknown_pass": false,
+        "faq_pass": false,
+        "grounding_pass": true,
+        "overall_pass": true,
+        "failure_reasons": []
+      },
+      "passed": true,
+      "failure_reasons": []
+    },
+    {
+      "id": "RAG014",
+      "category": "product_category",
+      "query": "Show me scrunchies",
+      "intent": "catalog_search",
+      "num_products_returned": 4,
+      "returned_products": [
+        {
+          "id": "8040673312958",
+          "title": "Blossom",
+          "price": 120.0,
+          "subcategory": "Scrunchies"
+        },
+        {
+          "id": "8027392835774",
+          "title": "Triangle Sareepin",
+          "price": 120.0,
+          "subcategory": "Scrunchies"
+        },
+        {
+          "id": "8655542059198",
+          "title": "Premium Icecream hair claw(1)",
+          "price": 199.0,
+          "subcategory": "Scrunchies"
+        },
+        {
+          "id": "8670047436990",
+          "title": "Artificial jasmine gajra realistic buds( preorder here)",
+          "price": 1199.0,
+          "subcategory": "Scrunchies"
+        }
+      ],
+      "reply_snippet": "Here are verified Scrunchies from RoSin's collection:",
+      "citations": [
+        "RoSin Verified Product Catalog"
+      ],
+      "checks": {
+        "retrieval_pass": true,
+        "constraint_pass": true,
+        "unknown_pass": false,
+        "faq_pass": false,
+        "grounding_pass": true,
+        "overall_pass": true,
+        "failure_reasons": []
+      },
+      "passed": true,
+      "failure_reasons": []
+    },
+    {
+      "id": "RAG015",
+      "category": "product_category",
+      "query": "Show me hair clips",
+      "intent": "catalog_search",
+      "num_products_returned": 1,
+      "returned_products": [
+        {
+          "id": "8655526691006",
+          "title": "Cute korean bow hair clip (1)",
+          "price": 99.0,
+          "subcategory": "Hair Clips"
+        }
+      ],
+      "reply_snippet": "Here are verified Hair Clips from RoSin's collection:",
+      "citations": [
+        "RoSin Verified Product Catalog"
+      ],
+      "checks": {
+        "retrieval_pass": true,
+        "constraint_pass": true,
+        "unknown_pass": false,
+        "faq_pass": false,
+        "grounding_pass": true,
+        "overall_pass": true,
+        "failure_reasons": []
+      },
+      "passed": true,
+      "failure_reasons": []
+    },
+    {
+      "id": "RAG016",
+      "category": "price",
+      "query": "Show me products under ₹2000",
+      "intent": "catalog_search",
+      "num_products_returned": 4,
+      "returned_products": [
+        {
+          "id": "8510811865278",
+          "title": "Kids glass kada model 2 (2 bangles)",
+          "price": 70.0,
+          "subcategory": "Kids Bangles"
+        },
+        {
+          "id": "8825745866942",
+          "title": "Tulasi kids kada (2 bangles)",
+          "price": 90.0,
+          "subcategory": "Broad Kada Bangles"
+        },
+        {
+          "id": "8655526691006",
+          "title": "Cute korean bow hair clip (1)",
+          "price": 99.0,
+          "subcategory": "Hair Clips"
+        },
+        {
+          "id": "8040673312958",
+          "title": "Blossom",
+          "price": 120.0,
+          "subcategory": "Scrunchies"
+        }
+      ],
+      "reply_snippet": "Here are verified products under ₹2,000 from RoSin's collection:",
+      "citations": [
+        "RoSin Verified Product Catalog"
+      ],
+      "checks": {
+        "retrieval_pass": true,
+        "constraint_pass": true,
+        "unknown_pass": false,
+        "faq_pass": false,
+        "grounding_pass": true,
+        "overall_pass": true,
+        "failure_reasons": []
+      },
+      "passed": true,
+      "failure_reasons": []
+    },
+    {
+      "id": "RAG017",
+      "category": "price",
+      "query": "Show me products under ₹3000",
+      "intent": "catalog_search",
+      "num_products_returned": 4,
+      "returned_products": [
+        {
+          "id": "8510811865278",
+          "title": "Kids glass kada model 2 (2 bangles)",
+          "price": 70.0,
+          "subcategory": "Kids Bangles"
+        },
+        {
+          "id": "8825745866942",
+          "title": "Tulasi kids kada (2 bangles)",
+          "price": 90.0,
+          "subcategory": "Broad Kada Bangles"
+        },
+        {
+          "id": "8655526691006",
+          "title": "Cute korean bow hair clip (1)",
+          "price": 99.0,
+          "subcategory": "Hair Clips"
+        },
+        {
+          "id": "8040673312958",
+          "title": "Blossom",
+          "price": 120.0,
+          "subcategory": "Scrunchies"
+        }
+      ],
+      "reply_snippet": "Here are verified products under ₹3,000 from RoSin's collection:",
+      "citations": [
+        "RoSin Verified Product Catalog"
+      ],
+      "checks": {
+        "retrieval_pass": true,
+        "constraint_pass": true,
+        "unknown_pass": false,
+        "faq_pass": false,
+        "grounding_pass": true,
+        "overall_pass": true,
+        "failure_reasons": []
+      },
+      "passed": true,
+      "failure_reasons": []
+    },
+    {
+      "id": "RAG018",
+      "category": "price",
+      "query": "Show bridal jewellery under ₹3000",
+      "intent": "catalog_search",
+      "num_products_returned": 1,
+      "returned_products": [
+        {
+          "id": "8787500236990",
+          "title": "Leaf diamond lookalike hipchain",
+          "price": 2599.0,
+          "subcategory": "Bridal Jewellery"
+        }
+      ],
+      "reply_snippet": "Here are verified Bridal Jewellery under ₹3,000 from RoSin's collection:",
+      "citations": [
+        "RoSin Verified Product Catalog"
+      ],
+      "checks": {
+        "retrieval_pass": true,
+        "constraint_pass": true,
+        "unknown_pass": false,
+        "faq_pass": false,
+        "grounding_pass": true,
+        "overall_pass": true,
+        "failure_reasons": []
+      },
+      "passed": true,
+      "failure_reasons": []
+    },
+    {
+      "id": "RAG019",
+      "category": "price",
+      "query": "Show products between ₹2000 and ₹5000",
+      "intent": "catalog_search",
+      "num_products_returned": 4,
+      "returned_products": [
+        {
+          "id": "8881209213118",
+          "title": "New diamond ad pendant kante with earrings",
+          "price": 2150.0,
+          "subcategory": "Bridal Full Sets"
+        },
+        {
+          "id": "8352466206910",
+          "title": "Radhakrishnan darkgreen muhurtham bridal set",
+          "price": 2340.0,
+          "subcategory": "Bridal Bangles"
+        },
+        {
+          "id": "8698544292030",
+          "title": "Sparkling diamond replica necklace",
+          "price": 2340.0,
+          "subcategory": "Bridal Full Sets"
+        },
+        {
+          "id": "8697089294526",
+          "title": "Valentine's combo box 2",
+          "price": 2370.0,
+          "subcategory": "Combo Boxes"
+        }
+      ],
+      "reply_snippet": "Here are verified products between ₹2,000 and ₹5,000 from RoSin's collection:",
+      "citations": [
+        "RoSin Verified Product Catalog"
+      ],
+      "checks": {
+        "retrieval_pass": true,
+        "constraint_pass": true,
+        "unknown_pass": false,
+        "faq_pass": false,
+        "grounding_pass": true,
+        "overall_pass": true,
+        "failure_reasons": []
+      },
+      "passed": true,
+      "failure_reasons": []
+    },
+    {
+      "id": "RAG020",
+      "category": "price",
+      "query": "Show earrings under ₹500",
+      "intent": "catalog_search",
+      "num_products_returned": 3,
+      "returned_products": [
+        {
+          "id": "8055206903998",
+          "title": "Rose stud",
+          "price": 150.0,
+          "subcategory": "Earrings"
+        },
+        {
+          "id": "8055207297214",
+          "title": "Coin lotus stud",
+          "price": 150.0,
+          "subcategory": "Earrings"
+        },
+        {
+          "id": "8055354851518",
+          "title": "Purple Lily stud",
+          "price": 150.0,
+          "subcategory": "Earrings"
+        }
+      ],
+      "reply_snippet": "Here are verified Earrings under ₹500 from RoSin's collection:",
+      "citations": [
+        "RoSin Verified Product Catalog"
+      ],
+      "checks": {
+        "retrieval_pass": true,
+        "constraint_pass": true,
+        "unknown_pass": false,
+        "faq_pass": false,
+        "grounding_pass": true,
+        "overall_pass": true,
+        "failure_reasons": []
+      },
+      "passed": true,
+      "failure_reasons": []
+    },
+    {
+      "id": "RAG021",
+      "category": "price",
+      "query": "Show necklaces under ₹1000",
+      "intent": "catalog_search",
+      "num_products_returned": 4,
+      "returned_products": [
+        {
+          "id": "8414418272446",
+          "title": "P-623 anti tarnish necklace",
+          "price": 299.0,
+          "subcategory": "Necklaces"
+        },
+        {
+          "id": "8414417453246",
+          "title": "P-625 anti tarnish necklace",
+          "price": 299.0,
+          "subcategory": "Necklaces"
+        },
+        {
+          "id": "8456821866686",
+          "title": "Star invisible necklace",
+          "price": 349.0,
+          "subcategory": "Necklaces"
+        },
+        {
+          "id": "8819053756606",
+          "title": "Cute minimal diamond replica necklace (with backchain)",
+          "price": 550.0,
+          "subcategory": "Necklaces"
+        }
+      ],
+      "reply_snippet": "Here are verified Necklaces under ₹1,000 from RoSin's collection:",
+      "citations": [
+        "RoSin Verified Product Catalog"
+      ],
+      "checks": {
+        "retrieval_pass": true,
+        "constraint_pass": true,
+        "unknown_pass": false,
+        "faq_pass": false,
+        "grounding_pass": true,
+        "overall_pass": true,
+        "failure_reasons": []
+      },
+      "passed": true,
+      "failure_reasons": []
+    },
+    {
+      "id": "RAG022",
+      "category": "price",
+      "query": "Show bangles under ₹500",
+      "intent": "catalog_search",
+      "num_products_returned": 4,
+      "returned_products": [
+        {
+          "id": "8510811865278",
+          "title": "Kids glass kada model 2 (2 bangles)",
+          "price": 70.0,
+          "subcategory": "Kids Bangles"
+        },
+        {
+          "id": "8825745866942",
+          "title": "Tulasi kids kada (2 bangles)",
+          "price": 90.0,
+          "subcategory": "Broad Kada Bangles"
+        },
+        {
+          "id": "8040798224574",
+          "title": "Leaf thin bangle",
+          "price": 190.0,
+          "subcategory": "Broad Kada Bangles"
+        },
+        {
+          "id": "8739199615166",
+          "title": "Lovely metal bangles (8 bangles)",
+          "price": 220.0,
+          "subcategory": "Ghungroo & Metal Bangles"
+        }
+      ],
+      "reply_snippet": "Here are verified Bangles under ₹500 from RoSin's collection:",
+      "citations": [
+        "RoSin Verified Product Catalog"
+      ],
+      "checks": {
+        "retrieval_pass": true,
+        "constraint_pass": true,
+        "unknown_pass": false,
+        "faq_pass": false,
+        "grounding_pass": true,
+        "overall_pass": true,
+        "failure_reasons": []
+      },
+      "passed": true,
+      "failure_reasons": []
+    },
+    {
+      "id": "RAG023",
+      "category": "price",
+      "query": "Show bridal full sets under ₹2000",
+      "intent": "catalog_search",
+      "num_products_returned": 4,
+      "returned_products": [
+        {
+          "id": "8819053559998",
+          "title": "Gold replica with ad stone necklace set(with backchain)",
+          "price": 650.0,
+          "subcategory": "Bridal Full Sets"
+        },
+        {
+          "id": "8698536427710",
+          "title": "Peacock diamond replica set",
+          "price": 799.0,
+          "subcategory": "Bridal Full Sets"
+        },
+        {
+          "id": "8698548355262",
+          "title": "Thamara lotus gold replica necklace",
+          "price": 990.0,
+          "subcategory": "Bridal Full Sets"
+        },
+        {
+          "id": "8856277942462",
+          "title": "Coin haaram traditional with earrings and back chain",
+          "price": 1199.0,
+          "subcategory": "Bridal Full Sets"
+        }
+      ],
+      "reply_snippet": "Here are verified Bridal Full Sets under ₹2,000 from RoSin's collection:",
+      "citations": [
+        "RoSin Verified Product Catalog"
+      ],
+      "checks": {
+        "retrieval_pass": true,
+        "constraint_pass": true,
+        "unknown_pass": false,
+        "faq_pass": false,
+        "grounding_pass": true,
+        "overall_pass": true,
+        "failure_reasons": []
+      },
+      "passed": true,
+      "failure_reasons": []
+    },
+    {
+      "id": "RAG024",
+      "category": "price",
+      "query": "Show jhumkas under ₹500",
+      "intent": "catalog_search",
+      "num_products_returned": 4,
+      "returned_products": [
+        {
+          "id": "8055301767358",
+          "title": "Green and pink jhumki",
+          "price": 249.0,
+          "subcategory": "Jhumkas"
+        },
+        {
+          "id": "8055303078078",
+          "title": "Pink and blue jhumki",
+          "price": 249.0,
+          "subcategory": "Jhumkas"
+        },
+        {
+          "id": "8063545114814",
+          "title": "Golden jhumka",
+          "price": 249.0,
+          "subcategory": "Jhumkas"
+        },
+        {
+          "id": "8055349215422",
+          "title": "Gold jhumki",
+          "price": 269.0,
+          "subcategory": "Jhumkas"
+        }
+      ],
+      "reply_snippet": "Here are verified Jhumkas under ₹500 from RoSin's collection:",
+      "citations": [
+        "RoSin Verified Product Catalog"
+      ],
+      "checks": {
+        "retrieval_pass": true,
+        "constraint_pass": true,
+        "unknown_pass": false,
+        "faq_pass": false,
+        "grounding_pass": true,
+        "overall_pass": true,
+        "failure_reasons": []
+      },
+      "passed": true,
+      "failure_reasons": []
+    },
+    {
+      "id": "RAG025",
+      "category": "price",
+      "query": "Show products above ₹5000",
+      "intent": "catalog_search",
+      "num_products_returned": 4,
+      "returned_products": [
+        {
+          "id": "8904035991742",
+          "title": "Raindrop combo box",
+          "price": 5300.0,
+          "subcategory": "Combo Boxes"
+        },
+        {
+          "id": "8962147090622",
+          "title": "Shades of green combo box(20 selective sets)",
+          "price": 5400.0,
+          "subcategory": "Combo Boxes"
+        },
+        {
+          "id": "8958225776830",
+          "title": "Pink delight combo box(20 sets selective)",
+          "price": 5400.0,
+          "subcategory": "Combo Boxes"
+        },
+        {
+          "id": "8335039594686",
+          "title": "Necklace and earrings set",
+          "price": 5900.0,
+          "subcategory": "Bridal Full Sets"
+        }
+      ],
+      "reply_snippet": "Here are verified products above ₹5,000 from RoSin's collection:",
+      "citations": [
+        "RoSin Verified Product Catalog"
+      ],
+      "checks": {
+        "retrieval_pass": true,
+        "constraint_pass": true,
+        "unknown_pass": false,
+        "faq_pass": false,
+        "grounding_pass": true,
+        "overall_pass": true,
+        "failure_reasons": []
+      },
+      "passed": true,
+      "failure_reasons": []
+    },
+    {
+      "id": "RAG026",
+      "category": "size",
+      "query": "Do you have size 2.6?",
+      "intent": "catalog_search",
+      "num_products_returned": 4,
+      "returned_products": [
+        {
+          "id": "8040798224574",
+          "title": "Leaf thin bangle",
+          "price": 190.0,
+          "subcategory": "Broad Kada Bangles"
+        },
+        {
+          "id": "8739199615166",
+          "title": "Lovely metal bangles (8 bangles)",
+          "price": 220.0,
+          "subcategory": "Ghungroo & Metal Bangles"
+        },
+        {
+          "id": "8865942274238",
+          "title": "Nithila glass bangles (1 dozen)",
+          "price": 249.0,
+          "subcategory": "Glass Bangles"
+        },
+        {
+          "id": "8893563273406",
+          "title": "Rajasthan Lac bangles(2 bangles)",
+          "price": 250.0,
+          "subcategory": "Broad Kada Bangles"
+        }
+      ],
+      "reply_snippet": "Yes! Here are verified bangles available in size 2.6 from RoSin's collection:",
+      "citations": [
+        "RoSin Verified Product Catalog"
+      ],
+      "checks": {
+        "retrieval_pass": true,
+        "constraint_pass": true,
+        "unknown_pass": false,
+        "faq_pass": false,
+        "grounding_pass": true,
+        "overall_pass": true,
+        "failure_reasons": []
+      },
+      "passed": true,
+      "failure_reasons": []
+    },
+    {
+      "id": "RAG027",
+      "category": "size",
+      "query": "Show bangles in size 2.8",
+      "intent": "catalog_search",
+      "num_products_returned": 4,
+      "returned_products": [
+        {
+          "id": "8040798224574",
+          "title": "Leaf thin bangle",
+          "price": 190.0,
+          "subcategory": "Broad Kada Bangles"
+        },
+        {
+          "id": "8739199615166",
+          "title": "Lovely metal bangles (8 bangles)",
+          "price": 220.0,
+          "subcategory": "Ghungroo & Metal Bangles"
+        },
+        {
+          "id": "8865942274238",
+          "title": "Nithila glass bangles (1 dozen)",
+          "price": 249.0,
+          "subcategory": "Glass Bangles"
+        },
+        {
+          "id": "8893563273406",
+          "title": "Rajasthan Lac bangles(2 bangles)",
+          "price": 250.0,
+          "subcategory": "Broad Kada Bangles"
+        }
+      ],
+      "reply_snippet": "Yes! Here are verified bangles available in size 2.8 from RoSin's collection:",
+      "citations": [
+        "RoSin Verified Product Catalog"
+      ],
+      "checks": {
+        "retrieval_pass": true,
+        "constraint_pass": true,
+        "unknown_pass": false,
+        "faq_pass": false,
+        "grounding_pass": true,
+        "overall_pass": true,
+        "failure_reasons": []
+      },
+      "passed": true,
+      "failure_reasons": []
+    },
+    {
+      "id": "RAG028",
+      "category": "size",
+      "query": "Which bangles are available in size 2.6?",
+      "intent": "catalog_search",
+      "num_products_returned": 4,
+      "returned_products": [
+        {
+          "id": "8040798224574",
+          "title": "Leaf thin bangle",
+          "price": 190.0,
+          "subcategory": "Broad Kada Bangles"
+        },
+        {
+          "id": "8739199615166",
+          "title": "Lovely metal bangles (8 bangles)",
+          "price": 220.0,
+          "subcategory": "Ghungroo & Metal Bangles"
+        },
+        {
+          "id": "8865942274238",
+          "title": "Nithila glass bangles (1 dozen)",
+          "price": 249.0,
+          "subcategory": "Glass Bangles"
+        },
+        {
+          "id": "8893563273406",
+          "title": "Rajasthan Lac bangles(2 bangles)",
+          "price": 250.0,
+          "subcategory": "Broad Kada Bangles"
+        }
+      ],
+      "reply_snippet": "Yes! Here are verified bangles available in size 2.6 from RoSin's collection:",
+      "citations": [
+        "RoSin Verified Product Catalog"
+      ],
+      "checks": {
+        "retrieval_pass": true,
+        "constraint_pass": true,
+        "unknown_pass": false,
+        "faq_pass": false,
+        "grounding_pass": true,
+        "overall_pass": true,
+        "failure_reasons": []
+      },
+      "passed": true,
+      "failure_reasons": []
+    },
+    {
+      "id": "RAG029",
+      "category": "size",
+      "query": "Do you have size 2.4?",
+      "intent": "catalog_search",
+      "num_products_returned": 4,
+      "returned_products": [
+        {
+          "id": "8040798224574",
+          "title": "Leaf thin bangle",
+          "price": 190.0,
+          "subcategory": "Broad Kada Bangles"
+        },
+        {
+          "id": "8739199615166",
+          "title": "Lovely metal bangles (8 bangles)",
+          "price": 220.0,
+          "subcategory": "Ghungroo & Metal Bangles"
+        },
+        {
+          "id": "8865942274238",
+          "title": "Nithila glass bangles (1 dozen)",
+          "price": 249.0,
+          "subcategory": "Glass Bangles"
+        },
+        {
+          "id": "8893563273406",
+          "title": "Rajasthan Lac bangles(2 bangles)",
+          "price": 250.0,
+          "subcategory": "Broad Kada Bangles"
+        }
+      ],
+      "reply_snippet": "Yes! Here are verified bangles available in size 2.4 from RoSin's collection:",
+      "citations": [
+        "RoSin Verified Product Catalog"
+      ],
+      "checks": {
+        "retrieval_pass": true,
+        "constraint_pass": true,
+        "unknown_pass": false,
+        "faq_pass": false,
+        "grounding_pass": true,
+        "overall_pass": true,
+        "failure_reasons": []
+      },
+      "passed": true,
+      "failure_reasons": []
+    },
+    {
+      "id": "RAG030",
+      "category": "size",
+      "query": "Show bangles in size 2.2",
+      "intent": "catalog_search",
+      "num_products_returned": 4,
+      "returned_products": [
+        {
+          "id": "8040798224574",
+          "title": "Leaf thin bangle",
+          "price": 190.0,
+          "subcategory": "Broad Kada Bangles"
+        },
+        {
+          "id": "8048296296638",
+          "title": "Diamond daisy broad kada",
+          "price": 490.0,
+          "subcategory": "Broad Kada Bangles"
+        },
+        {
+          "id": "8048295444670",
+          "title": "Floral 3d kada (single)",
+          "price": 550.0,
+          "subcategory": "Broad Kada Bangles"
+        },
+        {
+          "id": "8048294887614",
+          "title": "Sunflower kada bangles(single)",
+          "price": 550.0,
+          "subcategory": "Broad Kada Bangles"
+        }
+      ],
+      "reply_snippet": "Yes! Here are verified bangles available in size 2.2 from RoSin's collection:",
+      "citations": [
+        "RoSin Verified Product Catalog"
+      ],
+      "checks": {
+        "retrieval_pass": true,
+        "constraint_pass": true,
+        "unknown_pass": false,
+        "faq_pass": false,
+        "grounding_pass": true,
+        "overall_pass": true,
+        "failure_reasons": []
+      },
+      "passed": true,
+      "failure_reasons": []
+    },
+    {
+      "id": "RAG031",
+      "category": "size",
+      "query": "Show bangles in size 2.10",
+      "intent": "catalog_search",
+      "num_products_returned": 4,
+      "returned_products": [
+        {
+          "id": "8641982857406",
+          "title": "Viral kashmiri ghungroo bangles (4 bangles)",
+          "price": 299.0,
+          "subcategory": "Ghungroo & Metal Bangles"
+        },
+        {
+          "id": "8490885480638",
+          "title": "White stone border bangles set",
+          "price": 1600.0,
+          "subcategory": "Broad Kada Bangles"
+        },
+        {
+          "id": "8409311772862",
+          "title": "Darkgreen and pastel pink set",
+          "price": 1900.0,
+          "subcategory": "Glass Bangles"
+        },
+        {
+          "id": "8352466206910",
+          "title": "Radhakrishnan darkgreen muhurtham bridal set",
+          "price": 2340.0,
+          "subcategory": "Bridal Bangles"
+        }
+      ],
+      "reply_snippet": "Yes! Here are verified bangles available in size 2.10 from RoSin's collection:",
+      "citations": [
+        "RoSin Verified Product Catalog"
+      ],
+      "checks": {
+        "retrieval_pass": true,
+        "constraint_pass": true,
+        "unknown_pass": false,
+        "faq_pass": false,
+        "grounding_pass": true,
+        "overall_pass": true,
+        "failure_reasons": []
+      },
+      "passed": true,
+      "failure_reasons": []
+    },
+    {
+      "id": "RAG032",
+      "category": "size",
+      "query": "Show bangles in size 2.12",
+      "intent": "catalog_search",
+      "num_products_returned": 4,
+      "returned_products": [
+        {
+          "id": "8409311772862",
+          "title": "Darkgreen and pastel pink set",
+          "price": 1900.0,
+          "subcategory": "Glass Bangles"
+        },
+        {
+          "id": "8352466206910",
+          "title": "Radhakrishnan darkgreen muhurtham bridal set",
+          "price": 2340.0,
+          "subcategory": "Bridal Bangles"
+        },
+        {
+          "id": "8040717156542",
+          "title": "Bridal golden set",
+          "price": 2580.0,
+          "subcategory": "Glass Bangles"
+        },
+        {
+          "id": "8347441889470",
+          "title": "Red and mango yellow bridal set",
+          "price": 2620.0,
+          "subcategory": "Bridal Bangles"
+        }
+      ],
+      "reply_snippet": "Yes! Here are verified bangles available in size 2.12 from RoSin's collection:",
+      "citations": [
+        "RoSin Verified Product Catalog"
+      ],
+      "checks": {
+        "retrieval_pass": true,
+        "constraint_pass": true,
+        "unknown_pass": false,
+        "faq_pass": false,
+        "grounding_pass": true,
+        "overall_pass": true,
+        "failure_reasons": []
+      },
+      "passed": true,
+      "failure_reasons": []
+    },
+    {
+      "id": "RAG033",
+      "category": "size",
+      "query": "What sizes are available for this product?",
+      "intent": "catalog_search",
+      "num_products_returned": 1,
+      "returned_products": [
+        {
+          "id": "8530020073662",
+          "title": "Pink stone bridal bangles",
+          "price": 2850.0,
+          "subcategory": "Bridal Bangles"
+        }
+      ],
+      "reply_snippet": "For Pink stone bridal bangles, verified available sizes are: 2.2, 2.4, 2.6, 2.8.",
+      "citations": [
+        "https://rosinjewellery.com/products/pink-stone-bridal-bangles"
+      ],
+      "checks": {
+        "retrieval_pass": true,
+        "constraint_pass": true,
+        "unknown_pass": false,
+        "faq_pass": false,
+        "grounding_pass": true,
+        "overall_pass": true,
+        "failure_reasons": []
+      },
+      "passed": true,
+      "failure_reasons": []
+    },
+    {
+      "id": "RAG034",
+      "category": "faq",
+      "query": "What is the return policy?",
+      "intent": "policy_faq",
+      "num_products_returned": 0,
+      "returned_products": [],
+      "reply_snippet": "All RoSin jewellery items are custom made on order. RoSin strictly does not provide exchange, return, or refund. Size exchange is not provided; customers must c...",
+      "citations": [
+        "https://rosinjewellery.com/pages/return-policy"
+      ],
+      "checks": {
+        "retrieval_pass": true,
+        "constraint_pass": true,
+        "unknown_pass": false,
+        "faq_pass": true,
+        "grounding_pass": true,
+        "overall_pass": true,
+        "failure_reasons": []
+      },
+      "passed": true,
+      "failure_reasons": []
+    },
+    {
+      "id": "RAG035",
+      "category": "faq",
+      "query": "What are the shipping options?",
+      "intent": "policy_faq",
+      "num_products_returned": 0,
+      "returned_products": [],
+      "reply_snippet": "RoSin provides domestic shipping across India (3 to 10 business days after crafting) and international shipping worldwide (1 to 2 weeks). For urgent orders, exp...",
+      "citations": [
+        "https://rosinjewellery.com/pages/shipping-policy"
+      ],
+      "checks": {
+        "retrieval_pass": true,
+        "constraint_pass": true,
+        "unknown_pass": false,
+        "faq_pass": true,
+        "grounding_pass": true,
+        "overall_pass": true,
+        "failure_reasons": []
+      },
+      "passed": true,
+      "failure_reasons": []
+    },
+    {
+      "id": "RAG036",
+      "category": "faq",
+      "query": "Do you ship internationally?",
+      "intent": "policy_faq",
+      "num_products_returned": 0,
+      "returned_products": [],
+      "reply_snippet": "Yes, RoSin provides international shipping worldwide. Delivery takes 1 to 2 weeks. All international orders must be placed directly by contacting WhatsApp at +9...",
+      "citations": [
+        "https://rosinjewellery.com/pages/shipping-policy"
+      ],
+      "checks": {
+        "retrieval_pass": true,
+        "constraint_pass": true,
+        "unknown_pass": false,
+        "faq_pass": true,
+        "grounding_pass": true,
+        "overall_pass": true,
+        "failure_reasons": []
+      },
+      "passed": true,
+      "failure_reasons": []
+    },
+    {
+      "id": "RAG037",
+      "category": "faq",
+      "query": "Do you offer rental jewellery?",
+      "intent": "policy_faq",
+      "num_products_returned": 0,
+      "returned_products": [],
+      "reply_snippet": "Yes, RoSin provides bridal imitation jewellery for rent. Visit our physical store directly in Pallipalayam or contact us on WhatsApp at +91 8438990370 for renta...",
+      "citations": [
+        "https://rosinjewellery.com/pages/faqs"
+      ],
+      "checks": {
+        "retrieval_pass": true,
+        "constraint_pass": true,
+        "unknown_pass": false,
+        "faq_pass": true,
+        "grounding_pass": true,
+        "overall_pass": true,
+        "failure_reasons": []
+      },
+      "passed": true,
+      "failure_reasons": []
+    },
+    {
+      "id": "RAG038",
+      "category": "faq",
+      "query": "How can I contact RoSin?",
+      "intent": "policy_faq",
+      "num_products_returned": 0,
+      "returned_products": [],
+      "reply_snippet": "RoSin is an Indian handmade jewellery and accessories brand founded in 2021 by Sindhu Senthilkumar. The business operates as a woman-led craft studio with skill...",
+      "citations": [
+        "https://rosinjewellery.com/pages/about-us"
+      ],
+      "checks": {
+        "retrieval_pass": true,
+        "constraint_pass": true,
+        "unknown_pass": false,
+        "faq_pass": true,
+        "grounding_pass": true,
+        "overall_pass": true,
+        "failure_reasons": []
+      },
+      "passed": true,
+      "failure_reasons": []
+    },
+    {
+      "id": "RAG039",
+      "category": "faq",
+      "query": "Who is the founder of RoSin?",
+      "intent": "policy_faq",
+      "num_products_returned": 0,
+      "returned_products": [],
+      "reply_snippet": "RoSin Bangles & Jewellery was founded in 2021 by Sindhu Senthilkumar as a woman-led craft studio in Pallipalayam, Tamil Nadu. RoSin is dedicated to empowering l...",
+      "citations": [
+        "https://rosinjewellery.com/pages/about-us"
+      ],
+      "checks": {
+        "retrieval_pass": true,
+        "constraint_pass": true,
+        "unknown_pass": false,
+        "faq_pass": true,
+        "grounding_pass": true,
+        "overall_pass": true,
+        "failure_reasons": []
+      },
+      "passed": true,
+      "failure_reasons": []
+    },
+    {
+      "id": "RAG040",
+      "category": "faq",
+      "query": "What are your store opening hours?",
+      "intent": "policy_faq",
+      "num_products_returned": 0,
+      "returned_products": [],
+      "reply_snippet": "Rosin Bridal Jewels store is located at RS Road, opposite to SK Consulting, Erode - Pallipalayam Rd, Pallipalayam, Tamil Nadu 638006. Opening Hours: Everyday 9:...",
+      "citations": [
+        "https://rosinjewellery.com/pages/contact"
+      ],
+      "checks": {
+        "retrieval_pass": true,
+        "constraint_pass": true,
+        "unknown_pass": false,
+        "faq_pass": true,
+        "grounding_pass": true,
+        "overall_pass": true,
+        "failure_reasons": []
+      },
+      "passed": true,
+      "failure_reasons": []
+    },
+    {
+      "id": "RAG041",
+      "category": "faq",
+      "query": "What payment methods are accepted?",
+      "intent": "policy_faq",
+      "num_products_returned": 0,
+      "returned_products": [],
+      "reply_snippet": "RoSin accepts all major online payment options including UPI (Google Pay, PhonePe, Paytm), credit cards, debit cards, and net banking via secure online checkout...",
+      "citations": [
+        "https://rosinjewellery.com/pages/faqs"
+      ],
+      "checks": {
+        "retrieval_pass": true,
+        "constraint_pass": true,
+        "unknown_pass": false,
+        "faq_pass": true,
+        "grounding_pass": true,
+        "overall_pass": true,
+        "failure_reasons": []
+      },
+      "passed": true,
+      "failure_reasons": []
+    },
+    {
+      "id": "RAG042",
+      "category": "faq",
+      "query": "How do I order a customized set to match my saree?",
+      "intent": "policy_faq",
+      "num_products_returned": 0,
+      "returned_products": [],
+      "reply_snippet": "All our sets can be customized matching your outfits. Kindly DM us on Instagram @rosin_bangles or WhatsApp us at +91 8438990370. Send us your outfit picture and...",
+      "citations": [
+        "https://rosinjewellery.com/pages/faqs"
+      ],
+      "checks": {
+        "retrieval_pass": true,
+        "constraint_pass": true,
+        "unknown_pass": false,
+        "faq_pass": true,
+        "grounding_pass": true,
+        "overall_pass": true,
+        "failure_reasons": []
+      },
+      "passed": true,
+      "failure_reasons": []
+    },
+    {
+      "id": "RAG043",
+      "category": "faq",
+      "query": "What happens if my bangles are broken or damaged in transit?",
+      "intent": "policy_faq",
+      "num_products_returned": 0,
+      "returned_products": [],
+      "reply_snippet": "In case of damage during transit, contact RoSin via WhatsApp at +91 8438990370 within 2 days of delivery with an uncut, continuous 360-degree unboxing video dis...",
+      "citations": [
+        "https://rosinjewellery.com/pages/return-policy"
+      ],
+      "checks": {
+        "retrieval_pass": true,
+        "constraint_pass": true,
+        "unknown_pass": false,
+        "faq_pass": true,
+        "grounding_pass": true,
+        "overall_pass": true,
+        "failure_reasons": []
+      },
+      "passed": true,
+      "failure_reasons": []
+    },
+    {
+      "id": "RAG044",
+      "category": "unknown",
+      "query": "What is the capital of France?",
+      "intent": "unknown",
+      "num_products_returned": 0,
+      "returned_products": [],
+      "reply_snippet": "I don't know. This information isn't available in the business data. For specific inquiries, custom designs, or orders, please contact RoSin directly on WhatsAp...",
+      "citations": [],
+      "checks": {
+        "retrieval_pass": true,
+        "constraint_pass": true,
+        "unknown_pass": true,
+        "faq_pass": false,
+        "grounding_pass": true,
+        "overall_pass": true,
+        "failure_reasons": []
+      },
+      "passed": true,
+      "failure_reasons": []
+    },
+    {
+      "id": "RAG045",
+      "category": "unknown",
+      "query": "What is today's weather?",
+      "intent": "unknown",
+      "num_products_returned": 0,
+      "returned_products": [],
+      "reply_snippet": "I don't know. This information isn't available in the business data. For specific inquiries, custom designs, or orders, please contact RoSin directly on WhatsAp...",
+      "citations": [],
+      "checks": {
+        "retrieval_pass": true,
+        "constraint_pass": true,
+        "unknown_pass": true,
+        "faq_pass": false,
+        "grounding_pass": true,
+        "overall_pass": true,
+        "failure_reasons": []
+      },
+      "passed": true,
+      "failure_reasons": []
+    },
+    {
+      "id": "RAG046",
+      "category": "unknown",
+      "query": "Write a Python program",
+      "intent": "unknown",
+      "num_products_returned": 0,
+      "returned_products": [],
+      "reply_snippet": "I don't know. This information isn't available in the business data. For specific inquiries, custom designs, or orders, please contact RoSin directly on WhatsAp...",
+      "citations": [],
+      "checks": {
+        "retrieval_pass": true,
+        "constraint_pass": true,
+        "unknown_pass": true,
+        "faq_pass": false,
+        "grounding_pass": true,
+        "overall_pass": true,
+        "failure_reasons": []
+      },
+      "passed": true,
+      "failure_reasons": []
+    },
+    {
+      "id": "RAG047",
+      "category": "unknown",
+      "query": "Who won yesterday's cricket match?",
+      "intent": "unknown",
+      "num_products_returned": 0,
+      "returned_products": [],
+      "reply_snippet": "I don't know. This information isn't available in the business data. For specific inquiries, custom designs, or orders, please contact RoSin directly on WhatsAp...",
+      "citations": [],
+      "checks": {
+        "retrieval_pass": true,
+        "constraint_pass": true,
+        "unknown_pass": true,
+        "faq_pass": false,
+        "grounding_pass": true,
+        "overall_pass": true,
+        "failure_reasons": []
+      },
+      "passed": true,
+      "failure_reasons": []
+    },
+    {
+      "id": "RAG048",
+      "category": "unknown",
+      "query": "Tell me a joke",
+      "intent": "unknown",
+      "num_products_returned": 0,
+      "returned_products": [],
+      "reply_snippet": "I don't know. This information isn't available in the business data. For specific inquiries, custom designs, or orders, please contact RoSin directly on WhatsAp...",
+      "citations": [],
+      "checks": {
+        "retrieval_pass": true,
+        "constraint_pass": true,
+        "unknown_pass": true,
+        "faq_pass": false,
+        "grounding_pass": true,
+        "overall_pass": true,
+        "failure_reasons": []
+      },
+      "passed": true,
+      "failure_reasons": []
+    },
+    {
+      "id": "RAG049",
+      "category": "unknown",
+      "query": "Who is the president of the United States?",
+      "intent": "unknown",
+      "num_products_returned": 0,
+      "returned_products": [],
+      "reply_snippet": "I don't know. This information isn't available in the business data. For specific inquiries, custom designs, or orders, please contact RoSin directly on WhatsAp...",
+      "citations": [],
+      "checks": {
+        "retrieval_pass": true,
+        "constraint_pass": true,
+        "unknown_pass": true,
+        "faq_pass": false,
+        "grounding_pass": true,
+        "overall_pass": true,
+        "failure_reasons": []
+      },
+      "passed": true,
+      "failure_reasons": []
+    },
+    {
+      "id": "RAG050",
+      "category": "unknown",
+      "query": "How do I bake a chocolate cake?",
+      "intent": "unknown",
+      "num_products_returned": 0,
+      "returned_products": [],
+      "reply_snippet": "I don't know. This information isn't available in the business data. For specific inquiries, custom designs, or orders, please contact RoSin directly on WhatsAp...",
+      "citations": [],
+      "checks": {
+        "retrieval_pass": true,
+        "constraint_pass": true,
+        "unknown_pass": true,
+        "faq_pass": false,
+        "grounding_pass": true,
+        "overall_pass": true,
+        "failure_reasons": []
+      },
+      "passed": true,
+      "failure_reasons": []
+    },
+    {
+      "id": "RAG051",
+      "category": "unknown",
+      "query": "What is the current price of Bitcoin?",
+      "intent": "unknown",
+      "num_products_returned": 0,
+      "returned_products": [],
+      "reply_snippet": "I don't know. This information isn't available in the business data. For specific inquiries, custom designs, or orders, please contact RoSin directly on WhatsAp...",
+      "citations": [],
+      "checks": {
+        "retrieval_pass": true,
+        "constraint_pass": true,
+        "unknown_pass": true,
+        "faq_pass": false,
+        "grounding_pass": true,
+        "overall_pass": true,
+        "failure_reasons": []
+      },
+      "passed": true,
+      "failure_reasons": []
+    },
+    {
+      "id": "RAG052",
+      "category": "no_match",
+      "query": "Show bridal bangles under ₹2000",
+      "intent": "catalog_search",
+      "num_products_returned": 0,
+      "returned_products": [],
+      "reply_snippet": "I couldn't find a verified RoSin product matching those requirements. No verified products in RoSin's catalog match those criteria (Bridal Bangles under ₹2,000)...",
+      "citations": [
+        "RoSin Product Database"
+      ],
+      "checks": {
+        "retrieval_pass": true,
+        "constraint_pass": true,
+        "unknown_pass": false,
+        "faq_pass": false,
+        "grounding_pass": true,
+        "overall_pass": true,
+        "failure_reasons": []
+      },
+      "passed": true,
+      "failure_reasons": []
+    },
+    {
+      "id": "RAG053",
+      "category": "no_match",
+      "query": "Do you have size 3.5?",
+      "intent": "catalog_search",
+      "num_products_returned": 0,
+      "returned_products": [],
+      "reply_snippet": "No products were found in RoSin's verified catalog available in size 3.5. Verified bangle sizes in our collection include: 2.2, 2.4, 2.6, 2.8, 2.10, and 2.12.",
+      "citations": [
+        "RoSin Product Database"
+      ],
+      "checks": {
+        "retrieval_pass": true,
+        "constraint_pass": true,
+        "unknown_pass": false,
+        "faq_pass": false,
+        "grounding_pass": true,
+        "overall_pass": true,
+        "failure_reasons": []
+      },
+      "passed": true,
+      "failure_reasons": []
+    },
+    {
+      "id": "RAG054",
+      "category": "no_match",
+      "query": "Do you have bangles in size 1.8?",
+      "intent": "catalog_search",
+      "num_products_returned": 0,
+      "returned_products": [],
+      "reply_snippet": "No products were found in RoSin's verified catalog available in size 1.8. Verified bangle sizes in our collection include: 2.2, 2.4, 2.6, 2.8, 2.10, and 2.12.",
+      "citations": [
+        "RoSin Product Database"
+      ],
+      "checks": {
+        "retrieval_pass": true,
+        "constraint_pass": true,
+        "unknown_pass": false,
+        "faq_pass": false,
+        "grounding_pass": true,
+        "overall_pass": true,
+        "failure_reasons": []
+      },
+      "passed": true,
+      "failure_reasons": []
+    },
+    {
+      "id": "RAG055",
+      "category": "no_match",
+      "query": "Show bridal jewellery under ₹1000",
+      "intent": "catalog_search",
+      "num_products_returned": 0,
+      "returned_products": [],
+      "reply_snippet": "I couldn't find a verified RoSin product matching those requirements. No verified products in RoSin's catalog match those criteria (Bridal Jewellery under ₹1,00...",
+      "citations": [
+        "RoSin Product Database"
+      ],
+      "checks": {
+        "retrieval_pass": true,
+        "constraint_pass": true,
+        "unknown_pass": false,
+        "faq_pass": false,
+        "grounding_pass": true,
+        "overall_pass": true,
+        "failure_reasons": []
+      },
+      "passed": true,
+      "failure_reasons": []
+    },
+    {
+      "id": "RAG056",
+      "category": "no_match",
+      "query": "Show products under ₹50",
+      "intent": "catalog_search",
+      "num_products_returned": 0,
+      "returned_products": [],
+      "reply_snippet": "I couldn't find a verified RoSin product matching those requirements. No verified products in RoSin's catalog match those criteria (under ₹50). Please try relax...",
+      "citations": [
+        "RoSin Product Database"
+      ],
+      "checks": {
+        "retrieval_pass": true,
+        "constraint_pass": true,
+        "unknown_pass": false,
+        "faq_pass": false,
+        "grounding_pass": true,
+        "overall_pass": true,
+        "failure_reasons": []
+      },
+      "passed": true,
+      "failure_reasons": []
+    }
+  ]
+}
