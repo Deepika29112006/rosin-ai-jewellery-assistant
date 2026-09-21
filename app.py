@@ -13,8 +13,6 @@ from src.db import (
     get_business_info,
     get_policies
 )
-from src.rag_engine import get_rag
-from src.recommender import get_recommender
 
 app = Flask(__name__)
 app.config['JSON_SORT_KEYS'] = False
@@ -25,6 +23,7 @@ rag_engine = None
 def get_rag_engine():
     global rag_engine
     if rag_engine is None:
+        from src.rag_engine import get_rag
         rag_engine = get_rag()
     return rag_engine
 
@@ -132,6 +131,7 @@ def api_product_detail(handle):
 @app.route('/api/product/<handle>/similar', methods=['GET'])
 def api_product_similar(handle):
     try:
+        from src.recommender import get_recommender
         limit = request.args.get('limit', 6, type=int)
         similar = get_recommender().get_similar_products(handle, limit=limit)
         return jsonify({
